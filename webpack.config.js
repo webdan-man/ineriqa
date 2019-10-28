@@ -21,20 +21,41 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader',
+                    'sass-loader'
                 ],
             },
             {
                 test: /\.pug$/,
                 loader: 'pug-loader'
-            }
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'fonts/'
+                    }
+                  }
+                ]
+            },
+            {
+              test: /\.(png|jp(e*)g|svg)$/,  
+              use: [{
+                  loader: 'url-loader',
+                  options: { 
+                      limit: 8000, // Convert images < 8kb to base64 strings
+                      name: 'img/[name].[ext]'
+                  } 
+              }]
+          }
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'style.css',
         }),
-        // new LiveReloadPlugin(options),
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
             filename: `./${page.replace(/\.pug/,'.html')}`
