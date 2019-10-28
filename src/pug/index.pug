@@ -2,19 +2,22 @@ doctype html
 html(lang="en")
     head
         meta(charset='UTF-8')
-        title My Site
+        title INTERIQA
     body
         #maket
         header
             .wrap
                 a.logo(href="./")
+                    img(src=require("../img/logo.png"), alt="interiqa")
                 .header_right
                     .contact_info
                         p Офис ежедневно с 10:00 до 20:00
                         a(href="tel:+7 495 755-24-00") +7 495 755-24-00
                     .messengers
-                        a(href="./").telegram
-                        a(href="./").whatsapp
+                        a(href="./")
+                            img(src=require("../img/telegram.png"), alt="telegram")
+                        a(href="./")
+                            img(src=require("../img/whatsapp.png"), alt="whatsapp")
                     .menu 
                         span.text Меню
                         span.menu_button
@@ -31,28 +34,28 @@ html(lang="en")
             .wrap
                 .item_grup
                     - var list = [
-                    - { img: 'work_icon', text: 'Работаем по Москве и области' }, 
-                    - { img: 'contract_icon', text: 'Заключаем официальный договор' }, 
-                    - { img: 'staf_icon', text: 'Подбираем реальную мебель и материалы' }, 
-                    - { img: 'creditcard_icon', text: 'Фиксированная цена 2500 ₽ за м²' }
+                    - { url: require('../img/work_icon.png'), text: 'Работаем по Москве и области' }, 
+                    - { url: require('../img/contract_icon.png'), text: 'Заключаем официальный договор' }, 
+                    - { url: require('../img/staf_icon.png'), text: 'Подбираем реальную мебель и материалы' }, 
+                    - { url: require('../img/creditcard_icon.png'), text: 'Фиксированная цена 2500 ₽ за м²' }
                     - ]
                     each item in list
                         .item
-                            span(class= item.img)
+                            img(src= item.url, alt= item.text)
                             p= item.text
         section.section3
             .wrap
                 h2 Спроектировано
                 .project_grup
                     - var list = [
-                    - { url: 'project', title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: 'project', title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: 'project', title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: 'project', title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
                     - ]
                     each item in list
                         .item
-                            .img(class= item.url)
+                            img(src= item.url, alt= item.title)
                             .text
                                 .title= item.title
                                 p= item.text
@@ -131,7 +134,7 @@ html(lang="en")
                             | до конца ремонта
                         p На практике не бывает проектов без вопросов уже после его сдачи. Где-то изменится конфигурация шкафа, и нужно будет подкорректировать чертеж, а где-то решите в последний момент заменить диван, и захочется спросить, не будет ли он выбиваться из общей концепции.
                         .whatsapp_block
-                            .phone
+                            img(src=require("../img/phone.jpg"), alt="whatsapp")
                             p Для удобства работы используем Whatsapp, в общий чат подключается дизайнер, арт-директор и заказчик(и) проекта. Это позволяет оперативно вести и согласовывать работу на всех этапах и легко обмениваться материалами по проекту.
         section.section6
             .wrap
@@ -150,21 +153,65 @@ html(lang="en")
                         input(type="text", name="", placeholder="Ваше имя")
                     .input
                         input(type="tel", name="", placeholder="Номер телефона")
-                .form_grup
+                .form_grup.price
                     p Предварительная стоимость
                     .right
-                        span (75 м² × 2500 ₽)  187 500 ₽
-                .form_grup
+                        span.price_static (75 м² × 2500 ₽)  
+                        span.price_dynamic 187 500 ₽
+                .form_grup.time
                     p Срок выполнения
                     .right
-                        span до 40 рабочих дней
-                .form_grup
+                        span.time до 40 рабочих дней
+                .form_grup.date
                     p Ближайшая дата замера
                     .right
-                        span 28.11.2019
-                        .tooltip В связи с большой загруженностью, в ближайший месяц мы не берем 
+                        span.date 28.11.2019
+                        span.tooltip В связи с большой загруженностью, в ближайший месяц мы не берем 
+                            br
                             | новые проекты, но вы можете забронировать дату замера заранее
-                button.button(type="submit", form="form") Обсудить проект
-                p.button_text Нажимая на кнопку «Обсудить проект»,
+                .btn_grup
+                    button.button(type="submit", form="form") Обсудить проект
+                    p.button_text Нажимая на кнопку «Обсудить проект»,
+                        br
+                        | вы принимаете политику конфиденциальности
+        footer
+            .wrap
+                .footer_grup
+                    .footer_left
+                        .messengers
+                            a(href="./")
+                                img(src=require("../img/telegram.png"), alt="telegram")
+                            a(href="./")
+                                img(src=require("../img/whatsapp.png"), alt="whatsapp")
+                        .contact_info
+                            p Офис ежедневно с 10:00 до 20:00
+                            a(href="tel:+7 495 755-24-00") +7 495 755-24-00
+                    a.instagram_grup(href="https://www.instagram.com")
+                        span @interiqa
+                        img(src=require("../img/instagram.png"), alt="instagram")
+                p.politic Политика конфиденциальности
+                hr
+                p.footer_info Информация на сайте не является публичной оффертой
                     br
-                    | вы принимаете политику конфиденциальности
+                    | ИНН 0000000000 ОГРН 0000000000000
+                p.copy_write 2019 © interiqa
+        #hidden_box
+            section.popap
+                button.close
+                .wrap
+                    h2 Состав проекта
+                    p Дизайн-проект состоит из набора схем, чертежей и визуализаций для ремонта вашей квартиры и интуитивно понятен как заказчику так и исполнителю. С ним мастера смогут быстро рассчитать стоимость и выполнить необходимые работы, а вы сможете легко контролировать весь процесс и сразу закупить все необходимое.
+                img.img(src=require("../img/project_sostav.jpg"), alt="interiqa")
+                .wrap
+                    - var list = [
+                    - "— Обмерный план;", "— План расстановки мебели;", "— 3d визуализации помещений;", "— План демонтажа;", "— План монтажа;", "— Схема расположения дверей;", 
+                    - "— Схема расположения сантехнического оборудования;", "— План полов с отметками;", "— План потолков с высотами и привязками;", "— Общая схема электрики с привязками;",
+                    - "— Схема освещения с привязками;", "— Схема освещения по группам;", "—Схема расположения теплых полов;", "— Схема установки кондиционеров;", 
+                    - "— Развертки по стенам всех помещений объекта;", "— Схемы раскладки плитки;", "— Чертежи нетиповых деталей и встроенной мебели (если имеются);", "— Спецификация дверей;", 
+                    - "— Спецификация сантехнического оборудования;", "— Спецификация материалов для чистовой отделки помещений;", "— Спецификация мебели;", "— Спецификация осветительных приборов, выключателей и розеток;"
+                    - ]
+                    ul.ul
+                        each item in list
+                            li.li= item
+                
+
