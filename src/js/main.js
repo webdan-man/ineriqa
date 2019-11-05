@@ -110,6 +110,8 @@ const interaqaJS = function () {
                 viewport.setAttribute('content', 'width=480, initial-scale=1');
                 addNavInfo();
                 removeElement();
+                console.log('is mobile :)');
+                
             }
         })(navigator.userAgent||navigator.vendor||window.opera);
     };
