@@ -3,6 +3,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const PAGES_DIR = `${path.join(__dirname, 'src')}/pug/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
@@ -46,10 +47,10 @@ module.exports = {
                   loader: 'url-loader',
                   options: { 
                       limit: 8000, // Convert images < 8kb to base64 strings
-                      name: 'img/[name].[ext]'
+                      name: 'img/[hash]-[name].[ext]'
                   } 
               }]
-          }
+          },
         ],
     },
     plugins: [
@@ -58,8 +59,12 @@ module.exports = {
         }),
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
-            filename: `./${page.replace(/\.pug/,'.html')}`
+            filename: `./${page.replace(/\.pug/,'.html')}`,
+            favicon: 'src/favicon.ico',
         })),
+        new CopyPlugin([
+            { from: 'src/ajax', to: 'ajax' },
+        ]),
     ],
     watchOptions: {
         poll: true

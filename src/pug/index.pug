@@ -2,206 +2,241 @@ doctype html
 html(lang="en")
     head
         meta(charset='UTF-8')
-        title INTERIQA
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+        meta(name="description" content="Делаем подробные дизайн-проекты квартир и сопровождаем их во время ремонта")
+        link(rel="icon", href=require("../favicon-32x32.png"), type="image/png", sizes="32x32")
+        link(rel="apple-touch-icon", href=require("../apple-touch-icon-180x180.png"), sizes="180x180")
+        title interiqa | Студия дизайна интерьера
+        meta(name="viewport", content="width=1100, initial-scale=1")
+        style
     body
-        #maket
-        header
-            .wrap
-                a.logo(href="./")
-                    img(src=require("../img/logo.png"), alt="interiqa")
-                .header_right
-                    .contact_info
-                        p Офис ежедневно с 10:00 до 20:00
-                        a(href="tel:+7 495 755-24-00") +7 495 755-24-00
-                    .messengers
-                        a(href="./")
-                            img(src=require("../img/telegram.png"), alt="telegram")
-                        a(href="./")
-                            img(src=require("../img/whatsapp.png"), alt="whatsapp")
-                    .menu 
-                        span.text Меню
-                        span.menu_button
-        section.section1
-            .wrap
-                h1 Студия комплексного
-                    br
-                    | дизайна интерьера квартир
-                p Делаем подробные дизайн-проекты
-                    br
-                    | и сопровождаем их во время ремонта
-                button.button Рассчитать стоимость
-        section.section2
-            .wrap
-                .item_grup
-                    - var list = [
-                    - { url: require('../img/work_icon.png'), text: 'Работаем по Москве и области' }, 
-                    - { url: require('../img/contract_icon.png'), text: 'Заключаем официальный договор' }, 
-                    - { url: require('../img/staf_icon.png'), text: 'Подбираем реальную мебель и материалы' }, 
-                    - { url: require('../img/creditcard_icon.png'), text: 'Фиксированная цена 2500 ₽ за м²' }
-                    - ]
-                    each item in list
-                        .item
-                            img(src= item.url, alt= item.text)
-                            p= item.text
-        section.section3
-            .wrap
-                h2 Спроектировано
-                .project_grup
-                    - var list = [
-                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                    - ]
-                    each item in list
-                        .item
-                            img(src= item.url, alt= item.title)
-                            .text
-                                .title= item.title
-                                p= item.text
-        section.section4
-            .wrap
-                h2 Делаем с любовью и в срок
-                p Внимательно подходим к каждому заказчику. Подробно узнаем что вам нравится а что не нравится, например, нужен ли гигиенический душ в ванной, или сколько мест хранения оставить под гардероб. После этого объединяем ваши пожелания, особенности квартиры и наши навыки в подробный дизайн-проект, с которым можно приступать к ремонту. Мебель, материалы и ключевые решения подбираем под ваш бюджет.
-                h3 Занимаемся только дизайн-проектами
-                p Без декорирования, платных консультаций, выездов по магазинам и других дополнительных услуг. 
-                p Делаем только дизайн-проекты, но делаем их хорошо.
-        section.section5
-            .wrap
-                .block.step_start
-                    .left
-                        .step
-                    .right
-                        h2 Процесс разработки 
-                            br 
-                            | разбит на 5 этапов, и потребует
-                            br
-                            | вашего участия
-                .block.step1
-                    .left
-                        .step 1.
-                    .right
-                        h3 
-                            span Встретимся на объекте, 
-                            | снимем 
-                            br
-                            | точные размеры и зафиксируем ваши пожелания
-                        p Вместе с дизайнером вы определитесь с общим стилем и настроением интерьера, цветовой гаммой, пожеланиями по функциональности и кучей друих вопросов касательно будущего ремонта.
-                        .img
-                .block.step2
-                    .left
-                        .step 2.
-                    .right
-                        h3 Разработаем 
-                            span планировочное решение 
-                        p Исходя из геометрии квартиры, строительных норм и ваших личных предпочтений найдем максимально интересную и функционально оправданную планировку. Как правило, получается 2-3 хороших варианта, из которых выбираем один и дорабатываем.
-                        .img
-                .block.step3
-                    .left
-                        .step 3.
-                    .right
-                        h3 Сделаем 
-                            span 3d визуализации
-                        p В программе 3D MAX построим качественные фотореалистичные изображения каждой комнаты, которые дадут полное представление о будущем интерьере.
-                        p По ним вы сможете согласовать общий стиль, цветовое решение, сочетание материалов, мебели, и в целом посмотреть как будет выглядеть ваша квартира когда закончится ремонт.
-                        .img
-                .block.step4
-                    .left
-                        .step 4.
-                    .right
-                        h3 Подготовим рабочие 
-                            span схемы и чертежи,
-                            br
-                            | подберем мебель и материалы
-                        p Планы пола, потола, схемы расположения светильников, розеток, выключателей, развертки по стенам, 
-                            | списки мебели для покупки и другие материалы, которые нужны для того, чтобы воплотить проект.
-                        .img
-                .block.step0
-                    .left
-                        .step
-                    .right
-                        h2 В итоге вы получите проект, по которому
-                            br
-                            | ремонтная бригада сможет реализовать интерьер
-                        button.button_project Состав проекта
-                        .img
-                .block.step5
-                    .left
-                        .step 5.
-                    .right
-                        h3 
-                            span Сопровождаем проект 
-                            | до конца ремонта
-                        p На практике не бывает проектов без вопросов уже после его сдачи. Где-то изменится конфигурация шкафа, и нужно будет подкорректировать чертеж, а где-то решите в последний момент заменить диван, и захочется спросить, не будет ли он выбиваться из общей концепции.
-                        .whatsapp_block
-                            img(src=require("../img/phone.jpg"), alt="whatsapp")
-                            p Для удобства работы используем Whatsapp, в общий чат подключается дизайнер, арт-директор и заказчик(и) проекта. Это позволяет оперативно вести и согласовывать работу на всех этапах и легко обмениваться материалами по проекту.
-        section.section6
-            .wrap
-                h2 Обсудите с менеджером
-                    br 
-                    |детали вашего проекта
-                form(action="", method="post", id="form")
-                    .input
-                        label(for="count_input") Площадь объекта
-                        .count_input
-                            span.minus -
-                            input#count_input(type="text", name="", value="75 м²")
-                            span.plus +
-
-                    .input
-                        input(type="text", name="", placeholder="Ваше имя")
-                    .input
-                        input(type="tel", name="", placeholder="Номер телефона")
-                .form_grup.price
-                    p Предварительная стоимость
-                    .right
-                        span.price_static (75 м² × 2500 ₽)  
-                        span.price_dynamic 187 500 ₽
-                .form_grup.time
-                    p Срок выполнения
-                    .right
-                        span.time до 40 рабочих дней
-                .form_grup.date
-                    p Ближайшая дата замера
-                    .right
-                        span.date 28.11.2019
-                        span.tooltip В связи с большой загруженностью, в ближайший месяц мы не берем 
-                            br
-                            | новые проекты, но вы можете забронировать дату замера заранее
-                .btn_grup
-                    button.button(type="submit", form="form") Обсудить проект
-                    p.button_text Нажимая на кнопку «Обсудить проект»,
+        //- #maket
+        #indicator
+        .pre-loader
+            .cssload-thecube
+                .cssload-cube.cssload-c1
+                .cssload-cube.cssload-c2
+                .cssload-cube.cssload-c4
+                .cssload-cube.cssload-c3
+        #main
+            header
+                .wrap
+                    .header
+                        a.logo(href="http://interiqa.ru/")
+                            img(src=require("../img/logo.png"), height="41", width="190", alt="interiqa")
+                        .header_right
+                            .contact_info
+                                p Офис ежедневно с 10:00 до 20:00
+                                a.phone(href="tel:+7 495 755-24-00") +7 495 755-24-00
+                            .messengers
+                                a(href="tg://resolve?domain=@kmarkevich", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/telegram.png"), height="40", width="40", alt="telegram")
+                                a(href="https://wa.me/79999617656", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/whatsapp.png"), height="40", width="40", alt="whatsapp")
+                            .menu
+                                span.text Меню
+                                .menu_button
+                                    span
+                                    span
+                                    span
+                                    span
+            nav
+                .wrap
+                    .menu_list
+                        - var list = [ "Главная", "Споректировано", "Подоход", "Схема работы"]
+                        each item in list
+                            p= item
+                        p.red.button_scroll Рассчитать стоимость
+            section.section1
+                .wrap
+                    h1 Студия комплексного
                         br
-                        | вы принимаете политику конфиденциальности
-        footer
-            .wrap
-                .footer_grup
-                    .footer_left
-                        .messengers
-                            a(href="./")
-                                img(src=require("../img/telegram.png"), alt="telegram")
-                            a(href="./")
-                                img(src=require("../img/whatsapp.png"), alt="whatsapp")
-                        .contact_info
-                            p Офис ежедневно с 10:00 до 20:00
-                            a(href="tel:+7 495 755-24-00") +7 495 755-24-00
-                    a.instagram_grup(href="https://www.instagram.com")
-                        span @interiqa
-                        img(src=require("../img/instagram.png"), alt="instagram")
-                p.politic Политика конфиденциальности
-                hr
-                p.footer_info Информация на сайте не является публичной оффертой
-                    br
-                    | ИНН 0000000000 ОГРН 0000000000000
-                p.copy_write 2019 © interiqa
-        #hidden_box
-            section.popap
+                        | дизайна интерьера квартир
+                    p Делаем подробные дизайн-проекты
+                        br
+                        | и сопровождаем их во время ремонта
+                    button.button.button_scroll Рассчитать стоимость
+            section.section2
+                .wrap
+                    .item_grup
+                        - var list = [
+                        - { url: require('../img/work_icon.png'), text: 'Работаем по Москве и области' }, 
+                        - { url: require('../img/contract_icon.png'), text: 'Заключаем официальный договор' }, 
+                        - { url: require('../img/staf_icon.png'), text: 'Подбираем реальную мебель и материалы' }, 
+                        - { url: require('../img/creditcard_icon.png'), text: 'Фиксированная цена 2500 ₽ за м²' }
+                        - ]
+                        each item in list
+                            .item
+                                img(src= item.url, alt= item.text)
+                                p= item.text
+            section.section3
+                .wrap
+                    h2 Спроектировано
+                    .project_grup
+                        - var list = [
+                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                        - ]
+                        each item in list
+                            .item.button_project
+                                .img
+                                    img(src= item.url, alt= item.title)
+                                .text
+                                    .title= item.title
+                                    p= item.text
+            section.section4
+                .wrap
+                    h2 Делаем с любовью и в срок
+                    p Внимательно подходим к каждому заказчику. Подробно узнаем что вам нравится а что не нравится, например, нужен ли гигиенический душ в ванной, или сколько мест хранения оставить под гардероб. После этого объединяем ваши пожелания, особенности квартиры и наши навыки в подробный дизайн-проект, с которым можно приступать к ремонту. Мебель, материалы и ключевые решения подбираем под ваш бюджет.
+                    h3 Занимаемся только дизайн-проектами
+                    p Без декорирования, платных консультаций, выездов по магазинам и других дополнительных услуг. 
+                    p Делаем только дизайн-проекты, но делаем их хорошо.
+            section.section5
+                .wrap
+                    .block.step_start
+                        .left
+                            span.step
+                        .right
+                            h2 Процесс разработки 
+                                br 
+                                | разбит на 5 этапов, и потребует
+                                br
+                                | вашего участия
+                    .block.step1
+                        .left
+                            span.step 1.
+                        .right
+                            h3 
+                                span Встретимся на объекте, 
+                                | снимем 
+                                br
+                                | точные размеры и зафиксируем ваши пожелания
+                            p Вместе с дизайнером вы определитесь с общим стилем и настроением интерьера, цветовой гаммой, пожеланиями по функциональности и кучей друих вопросов касательно будущего ремонта.
+                            .img
+                    .block.step2
+                        .left
+                            span.step 2.
+                        .right
+                            h3 Разработаем 
+                                span планировочное решение 
+                            p Исходя из геометрии квартиры, строительных норм и ваших личных предпочтений найдем максимально интересную и функционально оправданную планировку. Как правило, получается 2-3 хороших варианта, из которых выбираем один и дорабатываем.
+                            .img
+                    .block.step3
+                        .left
+                            span.step 3.
+                        .right
+                            h3 Сделаем 
+                                span 3d визуализации
+                            p В программе 3D MAX построим качественные фотореалистичные изображения каждой комнаты, которые дадут полное представление о будущем интерьере.
+                            p По ним вы сможете согласовать общий стиль, цветовое решение, сочетание материалов, мебели, и в целом посмотреть как будет выглядеть ваша квартира когда закончится ремонт.
+                            .img
+                    .block.step4
+                        .left
+                            span.step 4.
+                        .right
+                            h3 Подготовим рабочие 
+                                span схемы и чертежи,
+                                br
+                                | подберем мебель и материалы
+                            p Планы пола, потола, схемы расположения светильников, розеток, выключателей, развертки по стенам, 
+                                | списки мебели для покупки и другие материалы, которые нужны для того, чтобы воплотить проект.
+                            .img
+                    .block.step0
+                        .left
+                            span.step
+                        .right
+                            h2 В итоге вы получите проект, по которому
+                                br
+                                | ремонтная бригада сможет реализовать интерьер
+                            button.button_sostav Состав проекта
+                            .img
+                    .block.step5
+                        .left
+                            span.step 5.
+                        .right
+                            h3 
+                                span Сопровождаем проект 
+                                | до конца ремонта
+                            p На практике не бывает проектов без вопросов уже после его сдачи. Где-то изменится конфигурация шкафа, и нужно будет подкорректировать чертеж, а где-то решите в последний момент заменить диван, и захочется спросить, не будет ли он выбиваться из общей концепции.
+                            .whatsapp_block
+                                .img_whatsapp
+                                p Для удобства работы используем Whatsapp, в общий чат подключается дизайнер, арт-директор и заказчик(и) проекта. Это позволяет оперативно вести и согласовывать работу на всех этапах и легко обмениваться материалами по проекту.
+            section.section6
+                .wrap
+                    h2 Обсудите с менеджером 
+                        br 
+                        | детали вашего проекта
+                    form(action="ajax/mail.php", method="post", id="form")
+                        .input
+                            label(for="count_input") Площадь объекта
+                            .count_input
+                                button(type='button').minus -
+                                input#count_input(type="number", name="", value="75")
+                                span.text м²
+                                button(type='button').plus +
+
+                        .input
+                            input(type="text", name="name", placeholder="Ваше имя")
+                        .input
+                            input(type="number", name="phone", placeholder="Номер телефона")
+                    .form_grup.price
+                        p Предварительная стоимость
+                        .right
+                            span.price_static ( 
+                                span#areaRoom 75
+                                | м² × 2500 ₽)  
+                            span.price_dynamic 
+                                span#total-cost 187 500 
+                                | ₽
+                    .form_grup.time
+                        p Срок выполнения
+                        .right
+                            span.time до 
+                                span#total-day 30 
+                                | рабочих дней
+                    .form_grup.date
+                        p Ближайшая дата замера
+                        .right
+                            span.date 28.11.2019
+                            span.tooltip В связи с большой загруженностью, в ближайший месяц мы не берем 
+                                br
+                                | новые проекты, но вы можете забронировать дату замера заранее
+                    .btn_grup
+                        button.button(type="submit", form="form") Обсудить проект
+                        p.button_text Нажимая на кнопку «Обсудить проект»,
+                            br
+                            | вы принимаете политику конфиденциальности
+            footer
+                .wrap
+                    .footer_grup
+                        .footer_left
+                            .messengers
+                                a(href="tg://resolve?domain=@kmarkevich", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/telegram.png"), height="40", width="40", alt="telegram")
+                                a(href="https://wa.me/79999617656", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/whatsapp.png"), height="40", width="40", alt="whatsapp")
+                            .contact_info
+                                p Офис ежедневно с 10:00 до 20:00
+                                a.phone(href="tel:+7 495 755-24-00") +7 495 755-24-00
+                        a.instagram_grup(href="https://www.instagram.com/interiqa/", target="_blank", rel="noopener noreferrer")
+                            span @interiqa
+                            img(src=require("../img/instagram.png"), height="40", width="40", alt="instagram")
+                    a(href="./", target="_blank", rel="noopener noreferrer").politic Политика конфиденциальности
+                    hr
+                    p.footer_info Информация на сайте не является публичной оффертой
+                        br
+                        | ИНН 0000000000 ОГРН 0000000000000
+                    p.copy_write 2019 © interiqa
+        #popap
+            section.popap#sostav
                 button.close
                 .wrap
                     h2 Состав проекта
                     p Дизайн-проект состоит из набора схем, чертежей и визуализаций для ремонта вашей квартиры и интуитивно понятен как заказчику так и исполнителю. С ним мастера смогут быстро рассчитать стоимость и выполнить необходимые работы, а вы сможете легко контролировать весь процесс и сразу закупить все необходимое.
-                img.img(src=require("../img/project_sostav.jpg"), alt="interiqa")
+                .img 
+                    img(src=require("../img/project_sostav.jpg"), alt="interiqa")
                 .wrap
                     - var list = [
                     - "— Обмерный план;", "— План расстановки мебели;", "— 3d визуализации помещений;", "— План демонтажа;", "— План монтажа;", "— Схема расположения дверей;", 
@@ -213,5 +248,41 @@ html(lang="en")
                     ul.ul
                         each item in list
                             li.li= item
-                
-
+                .footer
+                    .wrap
+                        h2 Рассчитайте стоимость проекта
+                            br
+                            | для вашей квартиры
+                        button.button.popap_button_scroll Рассчитать стоимость
+            section.popap#project
+                button.close
+                .wrap
+                    h2 Квартира-студия, 47 м2
+                    p Москва, ЖК «RedSide»
+                .img
+                    img(src=require("../img/project/project.jpg"), alt="interiqa")
+                .galery
+                    - var list = [
+                    - { url: require("../img/project/img1.jpg"), width: 1280 },
+                    - { url: require("../img/project/img2.jpg"), width: 1280 },
+                    - { url: require("../img/project/img3.jpg"), width: 1280 },
+                    - { url: require("../img/project/img4.jpg") },
+                    - { url: require("../img/project/img5.jpg") },
+                    - { url: require("../img/project/img6.jpg"), width: 1280 },
+                    - { url: require("../img/project/img7.jpg") },
+                    - { url: require("../img/project/img8.jpg"), width: 1280 },
+                    - { url: require("../img/project/img9.jpg") },
+                    - { url: require("../img/project/img10.jpg"), width: 1280 },
+                    - { url: require("../img/project/img11.jpg"), width: 1280 },
+                    - { url: require("../img/project/img12.jpg") },
+                    - ]
+                    each img in list
+                        .img
+                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                .footer
+                    .wrap
+                        h2 Рассчитайте стоимость проекта
+                            br
+                            | для вашей квартиры
+                        button.button.popap_button_scroll Рассчитать стоимость
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")

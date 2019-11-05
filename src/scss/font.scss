@@ -1,0 +1,26 @@
+@font-face {
+    font-family: TTNorms-Regular;
+    font-style: normal;
+      font-weight: 400;
+      src: url("../fonts/TTNorms-Regular.eot?") format("eot"),
+           url("../fonts/TTNorms-Regular.ttf") format("ttf"),
+           url("../fonts/TTNorms-Regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: TTNorms-Medium;
+    src: url(../fonts/TTNorms-Medium.ttf);
+    font-style: normal;
+      font-weight: 500;
+      src: url("../fonts/TTNorms-Medium.eot?") format("eot"),
+           url("../fonts/TTNorms-Medium.ttf") format("ttf"),
+           url("../fonts/TTNorms-Medium.woff") format("woff");
+  }
+  @font-face {
+    font-family: TTNorms-Bold;
+    src: url(../fonts/TTNorms-Bold.ttf);
+    font-style: normal;
+      font-weight: 700;
+      src: url("../fonts/TTNorms-Bold.eot?") format("eot"),
+           url("../fonts/TTNorms-Bold.ttf") format("ttf"),
+           url("../fonts/TTNorms-Bold.woff") format("woff");
+  }
