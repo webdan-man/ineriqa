@@ -250,15 +250,15 @@ $(document).ready(function(){
             var type = $(this).attr('method');
             var url = $(this).attr('action');
             var data = $(this).serialize();
-            console.log(data)
-            $.ajax({
-                type: type,
-                url: url,
-                data: data,
-                success: function() {
-                    alert('Success')
-                }
-            });
+            alert('Success');
+            // $.ajax({
+            //     type: type,
+            //     url: url,
+            //     data: data,
+            //     success: function() {
+            //         alert('Success')
+            //     }
+            // });
         } else {
             alert('Error');
         }
