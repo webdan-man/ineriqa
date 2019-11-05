@@ -43,11 +43,16 @@ html(lang="en")
             nav
                 .wrap
                     .menu_list
-                        - var list = [ "Главная", "Споректировано", "Подоход", "Схема работы"]
+                        - var list = [
+                        - { title: "Главная", href: '#section1' },
+                        - { title: "Споректировано", href: '#section3' },
+                        - { title: "Подоход", href: '#section4' },
+                        - { title: "Схема работы", href: '#section5' },
+                        - { title: "Рассчитать стоимость", href: '#section6', class: 'red' },
+                        - ]
                         each item in list
-                            p= item
-                        p.red.button_scroll Рассчитать стоимость
-            section.section1
+                            a.button_scroll(href= item.href, class= item.class ? item.class : '')= item.title
+            section.section1#section1
                 .wrap
                     h1 Студия комплексного
                         br
@@ -55,8 +60,8 @@ html(lang="en")
                     p Делаем подробные дизайн-проекты
                         br
                         | и сопровождаем их во время ремонта
-                    button.button.button_scroll Рассчитать стоимость
-            section.section2
+                    a.button.button_scroll(href="#section6") Рассчитать стоимость
+            section.section2#section2
                 .wrap
                     .item_grup
                         - var list = [
@@ -69,7 +74,7 @@ html(lang="en")
                             .item
                                 img(src= item.url, alt= item.text)
                                 p= item.text
-            section.section3
+            section.section3#section3
                 .wrap
                     h2 Спроектировано
                     .project_grup
@@ -86,14 +91,14 @@ html(lang="en")
                                 .text
                                     .title= item.title
                                     p= item.text
-            section.section4
+            section.section4#section4
                 .wrap
                     h2 Делаем с любовью и в срок
                     p Внимательно подходим к каждому заказчику. Подробно узнаем что вам нравится а что не нравится, например, нужен ли гигиенический душ в ванной, или сколько мест хранения оставить под гардероб. После этого объединяем ваши пожелания, особенности квартиры и наши навыки в подробный дизайн-проект, с которым можно приступать к ремонту. Мебель, материалы и ключевые решения подбираем под ваш бюджет.
                     h3 Занимаемся только дизайн-проектами
                     p Без декорирования, платных консультаций, выездов по магазинам и других дополнительных услуг. 
                     p Делаем только дизайн-проекты, но делаем их хорошо.
-            section.section5
+            section.section5#section5
                 .wrap
                     .block.step_start
                         .left
@@ -163,7 +168,7 @@ html(lang="en")
                             .whatsapp_block
                                 .img_whatsapp
                                 p Для удобства работы используем Whatsapp, в общий чат подключается дизайнер, арт-директор и заказчик(и) проекта. Это позволяет оперативно вести и согласовывать работу на всех этапах и легко обмениваться материалами по проекту.
-            section.section6
+            section.section6#section6
                 .wrap
                     h2 Обсудите с менеджером 
                         br 
@@ -173,7 +178,7 @@ html(lang="en")
                             label(for="count_input") Площадь объекта
                             .count_input
                                 button(type='button').minus -
-                                input#count_input(type="number", name="", value="75")
+                                input#count_input(type="number", name="area", value="75")
                                 span.text м²
                                 button(type='button').plus +
 
@@ -223,7 +228,7 @@ html(lang="en")
                         a.instagram_grup(href="https://www.instagram.com/interiqa/", target="_blank", rel="noopener noreferrer")
                             span @interiqa
                             img(src=require("../img/instagram.png"), height="40", width="40", alt="instagram")
-                    a(href="./", target="_blank", rel="noopener noreferrer").politic Политика конфиденциальности
+                    a(href="https://docs.google.com/document/d/1zKDni1zPh4zbdDvUh5nIfSnQ0N9zhGjRFOMk9fJmZzU/edit?usp=sharing", target="_blank", rel="noopener noreferrer").politic Политика конфиденциальности
                     hr
                     p.footer_info Информация на сайте не является публичной оффертой
                         br
@@ -285,4 +290,14 @@ html(lang="en")
                             br
                             | для вашей квартиры
                         button.button.popap_button_scroll Рассчитать стоимость
+        .vcard
+            div
+                span.fn.org interiqa
+            div Телефон:
+                 span.tel +7 495 755-24-00
+            div Мы работаем
+                span.workhours ежедневно с 10:00 до 21:00
+                span.url
+                    span.value-title(title="http://interiqa.ru/")
+                </span>
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")

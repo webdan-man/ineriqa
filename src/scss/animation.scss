@@ -44,10 +44,12 @@ body.pre-loaded .pre-loader {
   @keyframes menuOpen {
     from {
       transform: translateY(-590px);
+      z-index: 2;
     }
   
     to {
       transform: translateY(0);
+      z-index: 2;
     }
   }
   @keyframes popapClose {

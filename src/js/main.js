@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const interaqaJS = function () {
 
-    const menu = document.querySelector('.menu'),
+    const
+        menu = document.querySelector('.menu'),
         indicator = document.querySelector('#indicator'),
         documentElement = document.documentElement,
         viewport = document.querySelector('meta[name="viewport"]'),
@@ -33,6 +34,9 @@ const interaqaJS = function () {
         popapSostav = document.querySelector('#sostav'),
         popapProject= document.querySelector('#project'),
         closeButtons = document.querySelectorAll('.popap .close'),
+        inputNames = document.querySelectorAll('input[name="name"]'),
+        inputPhones = document.querySelectorAll('input[name="phone"]'),
+        inputs = document.querySelectorAll('input'),
         removeArray = [
             contact_info,
             messengers,
@@ -54,6 +58,7 @@ const interaqaJS = function () {
         buttonProject();
         closeButtonAction();
         popapScrollButtonAction();
+        inputAction();
     };
 
     const closeButtonAction = function () {
@@ -64,7 +69,7 @@ const interaqaJS = function () {
 
     const cloceButtonClick = function () {
         document.body.classList.remove('popap_open');
-        this.closest('.popap').classList.remove('open');
+        if (!!this.closest('.popap')) this.closest('.popap').classList.remove('open');
     }
 
     const popapScrollButtonAction = function () {        
@@ -79,10 +84,12 @@ const interaqaJS = function () {
         }
     }
 
-    const handleButtonClick = function () {
-        document.querySelector(".section6").scrollIntoView({block: "center", behavior: "smooth"});
-        document.body.classList.remove('popap_open');
-        this.closest('.popap').classList.remove('open');
+    const handleButtonClick = function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({block: "center", behavior: "smooth"});
+        if(document.body.classList) document.body.classList.remove('popap_open');
+        if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
+        if(this.closest('#main')) this.closest('#main').classList.remove('open');
      }
 
     const indicatorLine = function () {
@@ -192,18 +199,42 @@ const interaqaJS = function () {
     
     const buttonSostav = function () {
         button_sostav.addEventListener('click', function () {
-            document.body.classList += ' popap_open' ;
-            popapSostav.classList += ' open';
+            document.body.classList.add('popap_open');
+            popapSostav.classList.add('open');
         })
     }
 
     const buttonProject = function () {
         for (var i = 0; i < button_project.length; i++) {                   
             button_project[i].addEventListener('click', function () {
-                document.body.classList += ' popap_open' ;
-                popapProject.classList += ' open';
+                document.body.classList.add('popap_open');
+                popapProject.classList.add('open');
             })
         }
+    }
+
+    const inputAction = function () {
+        inputNames.forEach(function (item) {
+            item.onblur = function () {
+                if (this.value.length < 2) {
+                    this.classList.add('error-input');
+                }
+            }
+        })
+        inputPhones.forEach(function (item) {
+            item.onblur = function () {
+                if (this.value.length < 10) {
+                    this.classList.add('error-input');
+                }
+            }
+        })
+
+        inputs.forEach(function (item) {
+            item.onfocus = function () {
+                this.classList.remove('error-input');
+            }
+        })
+
     }
 
     init();
@@ -211,16 +242,25 @@ const interaqaJS = function () {
 
 
 $(document).ready(function(){
-    $('form').submit(function(e){
+
+    $('form').submit(function(e) {
         e.preventDefault();
-        var type=$(this).attr('method');
-        var url=$(this).attr('action');
-        var data=$(this).serialize();
-            
-        $.ajax({type: type, url: url, data: data,
-            success : function(){
-                //$.arcticmodal('close');$('#okgo').arcticmodal();
-            }
-        }); 
+        $(this).find('input').trigger('blur');
+        if (!$(this).find('input').hasClass('error-input')) {
+            var type = $(this).attr('method');
+            var url = $(this).attr('action');
+            var data = $(this).serialize();
+            console.log(data)
+            $.ajax({
+                type: type,
+                url: url,
+                data: data,
+                success: function() {
+                    alert('Success')
+                }
+            });
+        } else {
+            alert('Error');
+        }
     });
 })
