@@ -38,6 +38,7 @@ body {
   @include font-regular;
   color: #383838;
   background-color: #f8f7f3;
+  text-size-adjust: 100%;
   &.popap_open {
     overflow: hidden;
       .popap {
@@ -194,80 +195,80 @@ header {
       }
     }
   }
-  .header_right, .nav_info {
+}
+.header_right, .nav_info {
+  display: flex;
+  align-items: center;
+  .contact_info {
     display: flex;
-    align-items: center;
-    .contact_info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      .phone {
-        font-size: 24px;
-        margin-top: 3px;
+    flex-direction: column;
+    align-items: flex-end;
+    .phone {
+      font-size: 24px;
+      margin-top: 3px;
+    }
+    p {
+      margin-top: -3px;
+      position: relative;
+      &::before, &::after {
+        @include content;
+        border-radius: 50%;
       }
-      p {
-        margin-top: -3px;
-        position: relative;
-        &::before, &::after {
-          @include content;
-          border-radius: 50%;
-        }
-        &::before {
-          background-color: #9cc690;
-          width: 10px;
-          height: 10px;
-          left: -23px;
-          top: 3px;
-        }
-        &::after {
-          background-color: #4ea848;            
-          width: 4px;
-          height: 4px;
-          left: -20px;
-          top: 6px;
-        }
+      &::before {
+        background-color: #9cc690;
+        width: 10px;
+        height: 10px;
+        left: -23px;
+        top: 3px;
+      }
+      &::after {
+        background-color: #4ea848;            
+        width: 4px;
+        height: 4px;
+        left: -20px;
+        top: 6px;
       }
     }
-    .menu {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      &:hover {
-        .text {
-          &::after {
-            left: 0;
-            right: 0;
-            width: 100%;
-            transition: 0.35s;
-          }
-        }
-      }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
       .text {
-        @include font-medium;
-        font-size: 16px;
-        margin-right: 19px;
-        display: inline-block;
-        position: relative;
         &::after {
-          @include content;
-          height: 1px;
-          width: 0;
-          bottom: 1px;
-          left: 50%;
-          background: #383838;
+          left: 0;
+          right: 0;
+          width: 100%;
           transition: 0.35s;
         }
       }
     }
-    .messengers {
-      margin: 0 35px 0 15px;
-      display: flex;
-      a {
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        margin: 0 15px;
+    .text {
+      @include font-medium;
+      font-size: 16px;
+      margin-right: 19px;
+      display: inline-block;
+      position: relative;
+      &::after {
+        @include content;
+        height: 1px;
+        width: 0;
+        bottom: 1px;
+        left: 50%;
+        background: #383838;
+        transition: 0.35s;
       }
+    }
+  }
+  .messengers {
+    margin: 0 35px 0 15px;
+    display: flex;
+    a {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin: 0 15px;
     }
   }
 }

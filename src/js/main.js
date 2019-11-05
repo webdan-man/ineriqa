@@ -13,12 +13,12 @@ const interaqaJS = function () {
         indicator = document.querySelector('#indicator'),
         documentElement = document.documentElement,
         viewport = document.querySelector('meta[name="viewport"]'),
-        contact_info = document.querySelector('header .wrap .header .header_right .contact_info'),
+        contact_info = document.querySelector('header .header_right .contact_info'),
         contact_info_footer = document.querySelector('footer .wrap .footer_grup .footer_left .contact_info'),
         contact_info_clone = contact_info.cloneNode(true),
-        messengers = document.querySelector('header .wrap .header .header_right .messengers'),
+        messengers = document.querySelector('header .header_right .messengers'),
         messengers_clone = messengers.cloneNode(true),
-        nav = document.querySelector('header nav .wrap'),
+        nav = document.querySelector('#main nav .wrap'),
         scrollButtons = document.querySelectorAll('.button_scroll'),
         popapScrollButtons = document.querySelectorAll('.popap_button_scroll'),
         quantityArrowMinus = document.querySelector(".minus"),
@@ -39,8 +39,7 @@ const interaqaJS = function () {
         inputs = document.querySelectorAll('input'),
         removeArray = [
             contact_info,
-            messengers,
-            contact_info_footer
+            messengers
         ]
     ;
     
@@ -117,6 +116,7 @@ const interaqaJS = function () {
 
     const removeElement = function () {
         removeArray.forEach(element => {
+
             element.parentNode.removeChild(element);
         })
     };

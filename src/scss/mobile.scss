@@ -33,38 +33,39 @@
                 }
             }
         }
-        nav {
-            .wrap {
-                padding: 45px 25px 0;
-                .menu_list {
-                    p {
-                        font-size: 22px;
-                    }
+    }
+    nav {
+        padding: 62px 0 65px;
+        .wrap {
+            padding: 45px 25px 0;
+            .menu_list {
+                p {
+                    font-size: 22px;
                 }
             }
         }
-        .nav_info {
-            margin-top: 45px;
-            justify-content: space-between;
-            .messengers {
-                margin: 0;
+    }
+    .nav_info {
+        margin-top: 45px;
+        justify-content: space-between;
+        .messengers {
+            margin: 0;
+        }
+        .contact_info {
+            align-items: flex-start;
+            p {
+                font-size: 12px;
+                &::before {
+                    right: -23px;
+                    left: auto;
+                }
+                &::after {
+                    right: -20px;
+                    left: auto;
+                }
             }
-            .contact_info {
-                align-items: flex-start;
-                p {
-                    font-size: 12px;
-                    &::before {
-                        right: -23px;
-                        left: auto;
-                    }
-                    &::after {
-                        right: -20px;
-                        left: auto;
-                    }
-                }
-                a {
-                    font-size: 28px;
-                }
+            a {
+                font-size: 28px;
             }
         }
     }
