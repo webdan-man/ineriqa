@@ -59,9 +59,9 @@ body {
   }
 }
 #maket {
-  background: url(../img/maket_project_mobile.jpg);
+  background: url(../img/maket.jpg);
   position: absolute;
-  top: 11508px;
+  top: 0;
   left: 0px;
   width: 100%;
   background-repeat: no-repeat;
@@ -73,8 +73,8 @@ body {
 .wrap { 
   position: relative;
   width: 100%;
-  margin: 0 auto;
   max-width: 1420px;
+  margin: 0 auto;
   padding: 0 70px;
 }
 @mixin content {
@@ -156,7 +156,7 @@ header {
   padding-top: 45px;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 4;
   transition: all 0.35s;
   &::before {
     @include content;
@@ -176,8 +176,6 @@ header {
       .logo {
         img {
           display: inline-block;
-          width: 190px;
-          height: 41px;
           object-fit: cover;
         }
       }
@@ -339,13 +337,13 @@ nav {
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      padding: 27px 159px;
+      padding: 27px 12.5%;
       justify-content: space-between;
       .item {
         display: flex;
         align-items: center;
-        margin: 20px 0;
-        width: 50%;
+        margin: 20px 80px 20px 0px;
+        width: 400px;
         img {
           min-height: 40px;
           width: 44px;
@@ -1104,7 +1102,7 @@ footer  {
   transition: .25s ease-in-out;
 }
 .menu_button span:nth-child(1) {
-  top: 0px;
+  top: 0;
 }
 .menu_button span:nth-child(2),.menu_button span:nth-child(3) {
   top: 11px;
