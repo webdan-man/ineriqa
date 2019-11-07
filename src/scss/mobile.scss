@@ -165,6 +165,15 @@
                         &::after {
                             display: none;
                         }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 2px;
+                            height: 51px;
+                            top: -51px;
+                            left: 21px;
+                            background-size: 1px 4px, 1px 100%;
+                        }
                     }
                 }
                 h3 {
@@ -185,7 +194,7 @@
                         width: 73px;
                         height: 73px;
                         background-image: url(../img/hi_girl_mobile.png);
-                        margin-left: 0px;
+                        margin-left: 0;
                     }
                 }
                 &.step1 {
@@ -199,13 +208,7 @@
                     }
                     .step {
                         &::before {
-                            content: '';
-                            position: absolute;
-                            background-image: url(../img/line_step_1_mobile.png);
-                            width: 2px;
-                            height: 51px;
-                            top: -51px;
-                            left: 21px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #8f6d9d 100%, #8f6d9d 0%);
                         }
                     }
                 }
@@ -220,13 +223,7 @@
                     }
                     .step {
                         &::before {
-                            content: '';
-                            position: absolute;
-                            background-image: url(../img/line_step_2_mobile.png);
-                            width: 2px;
-                            height: 51px;
-                            top: -51px;
-                            left: 21px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #518685 100%, #518685 0%);
                         }
                     }
                 }
@@ -241,21 +238,12 @@
                     }
                     .step {
                         &::before {
-                            content: '';
-                            position: absolute;
-                            background-image: url(../img/line_step_3_mobile.png);
-                            width: 2px;
-                            height: 51px;
-                            top: -51px;
-                            left: 21px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #387c58 100%, #387c58 0%);
                         }
                     }
                 }
                 &.step4 {
                     margin-top: 53px;
-                    .step {
-                        background-color: #e95347;
-                    }
                     .right {
                         margin-top: 4px;
                         h3 {
@@ -266,13 +254,7 @@
                     }
                     .step {
                         &::before {
-                            content: '';
-                            position: absolute;
-                            background-image: url(../img/line_step_4_mobile.png);
-                            width: 2px;
-                            height: 51px;
-                            top: -51px;
-                            left: 21px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #e95347 100%, #e95347 0%);
                         }
                     }
                 }
@@ -303,13 +285,7 @@
                     }
                     .step {
                         &::before {
-                            content: '';
-                            position: absolute;
-                            background-image: url(../img/line_step_5_mobile.png);
-                            width: 2px;
-                            height: 51px;
-                            top: -51px;
-                            left: 21px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #aa8d5b 100%, #aa8d5b 0%);
                         }
                     }
                 }
