@@ -172,8 +172,7 @@ html(lang="en")
                             label(for="count_input") Площадь объекта
                             .count_input
                                 button(type='button').minus -
-                                input#count_input(type="number", name="area", value="75")
-                                span.text м²
+                                input#count_input(type="text", name="area", value="75м²")
                                 button(type='button').plus +
 
                         .input
@@ -229,6 +228,7 @@ html(lang="en")
                         | ИНН 0000000000 ОГРН 0000000000000
                     p.copy_write 2019 © interiqa
         #popap
+            .popap_overlay
             section.popap#sostav
                 button.close
                 .wrap

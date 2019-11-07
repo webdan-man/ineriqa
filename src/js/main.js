@@ -139,32 +139,40 @@ const interaqaJS = function () {
 
     const quantityProducts = function () {
         quantityArrowMinus.addEventListener('click', function () {
-            if (+quantityNum.value > 1 ) {
-                quantityNum.value = +quantityNum.value - 1;
+            const localValue = quantityNum.value.replace('м²','');
+            if (+localValue > 1 ) {
+                quantityNum.value = +localValue - 1 + 'м²';
                 formChange();
             }
         });
         quantityArrowPlus.addEventListener('click', function () {
-            if (+quantityNum.value > 0 && +quantityNum.value < 999) {
-                quantityNum.value = +quantityNum.value + 1;
+            const localValue = quantityNum.value.replace('м²','');
+            if (+localValue > 0 && localValue < 999) {
+                quantityNum.value = +localValue + 1 + 'м²';
                 formChange();
             }
         });
         quantityNum.addEventListener('change', function () {
-            if (quantityNum.value > 999) {
+            const localValue = quantityNum.value.replace('м²','');
+            if (+localValue > 999) {
                 quantityNum.value = 999;
             }
-            if (quantityNum.value < 1) {
+            if (+localValue < 1) {
                 quantityNum.value = 1;
             }
             formChange();
         });
+        quantityNum.oninput = function() {
+            quantityNum.value = quantityNum.value.replace (/\D/g, '') + 'м²';
+        }
     }
     
     const formChange = function () {
-        areaRoom.textContent = quantityNum.value;
-        totalCost.textContent = +quantityNum.value * 2500;
-        totalDayFunk(quantityNum.value);
+        const localValue = quantityNum.value.replace('м²','');
+        areaRoom.textContent = localValue;
+        const rez = +localValue * 2500;
+        totalCost.textContent = rez.toLocaleString('ru')
+        totalDayFunk(localValue);
     }
 
     const totalDayFunk = function (val) {
@@ -175,14 +183,14 @@ const interaqaJS = function () {
     }
 
     const checkText = function () {
-        nameInput.addEventListener('keyup', function() {            
+        nameInput.oninput = function() {            
             const regex = /^[a-zA-Z]*$/;
             let newVal = '';
             if (regex.test(nameInput.value) !== true) {
                 for (let char of nameInput.value) if(/[0-9]/.test(char) !== true) newVal += char;
                 nameInput.value = newVal;
             }
-        });
+        }
     }
 
     const checkPhone = function () {        
@@ -235,7 +243,7 @@ const interaqaJS = function () {
         })
 
     }
-
+    // м²
     init();
 };
 

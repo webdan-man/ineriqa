@@ -41,9 +41,18 @@ body {
   text-size-adjust: 100%;
   &.popap_open {
     overflow: hidden;
-      .popap {
-        overflow-y: scroll;
-      }
+    .popap_overlay {
+      opacity: 1!important;
+      z-index: 2;
+      transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    .popap {
+      overflow-y: scroll;
+    }
+    #main {
+      transform: scale(0.95);
+      transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
   }
 }
 ::-webkit-input-placeholder {color:#bababa;}
@@ -51,6 +60,8 @@ body {
 :-moz-placeholder           {color:#bababa;}
 :-ms-input-placeholder      {color:#bababa;}
 #main {
+  transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform-origin: top center;
   &.open {
     nav {
       visibility: visible;
@@ -729,9 +740,8 @@ nav {
           #count_input {
             width: 156px;
             padding: 0;
-            text-align: right!important;
+            text-align: center;
             border: none;
-            padding-right: 78px;
             box-shadow: none;
           }
           .minus, .plus {
@@ -849,6 +859,8 @@ nav {
 footer  {
   background-color: rgb(43, 43, 42);
   padding: 101px 0 47px;
+  z-index: 1;
+  position: relative;
   .wrap {
     display: flex;
     flex-direction: column;
@@ -974,20 +986,30 @@ footer  {
   width: 100%;
   height: 0;
   overflow: hidden;
-}
-.popap {
-  &.open {
+  .popap_overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     height: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+}
+.popap {
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  transform: translateY(100vh);
+  position: fixed;
+  &.open {
     overflow: hidden;
     z-index: 7;
-    animation-duration: 0.5s;
-    animation-name: popapOpen;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
   &#sostav {
     background-color: #f8f7f3;
