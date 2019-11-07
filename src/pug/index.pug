@@ -12,19 +12,12 @@ html(lang="en")
         style
     body
         //- #maket
-        #indicator
-        .pre-loader
-            .cssload-thecube
-                .cssload-cube.cssload-c1
-                .cssload-cube.cssload-c2
-                .cssload-cube.cssload-c4
-                .cssload-cube.cssload-c3
         #main
             header
                 .wrap
                     .header
                         a.logo(href="http://interiqa.ru/")
-                            img(src=require("../img/logo.png"), height="41", width="190", alt="interiqa")
+                            img(src=require("../img/interiqa-logo-horizontal-2.svg"), height="41", width="190", alt="interiqa")
                         .header_right
                             .contact_info
                                 p Офис ежедневно с 10:00 до 20:00
@@ -155,7 +148,7 @@ html(lang="en")
                         .right
                             h2 В итоге вы получите проект, по которому
                                 br
-                                | ремонтная бригада сможет реализовать интерьер
+                                | строители смогут сделать ремонт
                             button.button_sostav Состав проекта
                             .img
                     .block.step5
@@ -171,7 +164,7 @@ html(lang="en")
                                 p Для удобства работы используем Whatsapp, в общий чат подключается дизайнер, арт-директор и заказчик(и) проекта. Это позволяет оперативно вести и согласовывать работу на всех этапах и легко обмениваться материалами по проекту.
             section.section6#section6
                 .wrap
-                    h2 Обсудите с менеджером 
+                    h2 Обсудите со специалистом 
                         br 
                         | детали вашего проекта
                     form(action="ajax/mail.php", method="post", id="form")
@@ -186,11 +179,11 @@ html(lang="en")
                         .input
                             input(type="text", name="name", placeholder="Ваше имя", required)
                         .input
-                            input(type="number", name="phone", placeholder="Номер телефона", required)
+                            input(type="text", name="phone", placeholder="Номер телефона", required)
                     .form_grup.price
                         p Предварительная стоимость
                         .right
-                            span.price_static ( 
+                            span.price_static (
                                 span#areaRoom 75
                                 | м² × 2500 ₽)  
                             span.price_dynamic 
@@ -259,7 +252,7 @@ html(lang="en")
                         h2 Рассчитайте стоимость проекта
                             br
                             | для вашей квартиры
-                        button.button.popap_button_scroll Рассчитать стоимость
+                        a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
             section.popap#project
                 button.close
                 .wrap
@@ -290,7 +283,7 @@ html(lang="en")
                         h2 Рассчитайте стоимость проекта
                             br
                             | для вашей квартиры
-                        button.button.popap_button_scroll Рассчитать стоимость
+                        a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
         .vcard
             div
                 span.fn.org interiqa
@@ -302,3 +295,4 @@ html(lang="en")
                     span.value-title(title="http://interiqa.ru/")
                 </span>
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js")

@@ -1,8 +1,5 @@
 'use strict';
-document.addEventListener("DOMContentLoaded", function() {
-
-    setTimeout(() => document.getElementsByTagName('body')[0].className += ' pre-loaded', 2000);
-    
+document.addEventListener("DOMContentLoaded", function() {    
     const interaqa = new interaqaJS();
 });
 
@@ -10,7 +7,6 @@ const interaqaJS = function () {
 
     const
         menu = document.querySelector('.menu'),
-        indicator = document.querySelector('#indicator'),
         documentElement = document.documentElement,
         viewport = document.querySelector('meta[name="viewport"]'),
         contact_info = document.querySelector('header .header_right .contact_info'),
@@ -46,13 +42,12 @@ const interaqaJS = function () {
     const init = function () {
         scrollButtonAction();
         openMenuToggle();
-        indicatorLine();
         mobilecheck();
         changePhoneNode(contact_info);
         changePhoneNode(contact_info_footer);
         quantityProducts();
         checkText();
-        checkPhone();
+        // checkPhone();
         buttonSostav();
         buttonProject();
         closeButtonAction();
@@ -90,13 +85,6 @@ const interaqaJS = function () {
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
      }
-
-    const indicatorLine = function () {
-        window.addEventListener('scroll', function() {
-            const progres = 100 * documentElement.scrollTop / (documentElement.scrollHeight - documentElement.clientHeight);
-            indicator.style.width = progres + '%';
-        });
-    }
 
     const openMenuToggle = function () {
         menu.addEventListener('click', function(e) {        
@@ -244,6 +232,8 @@ const interaqaJS = function () {
 
 
 $(document).ready(function(){
+
+    $('input[name="phone"]').mask('+7 (999) 999-99-99');
 
     $('form').submit(function(e) {
         e.preventDefault();
