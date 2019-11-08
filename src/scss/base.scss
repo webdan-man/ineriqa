@@ -381,6 +381,7 @@ nav {
       flex-wrap: wrap;
       justify-content: space-between;
       .item {
+        transition: all 0.35s;
         border-radius: 12px;
         box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
         background-color: rgb(225, 209, 184);
@@ -392,6 +393,7 @@ nav {
         cursor: pointer;
         &:hover {
           box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+          transition: all 0.35s;
           img {
             transition: all 0.35s;
             transform: scale(1.05);
