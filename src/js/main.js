@@ -81,7 +81,7 @@ const interaqaJS = function () {
 
     const handleButtonClick = function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({block: "center", behavior: "smooth"});
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'start' });
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
@@ -205,7 +205,10 @@ const interaqaJS = function () {
     }
     
     const buttonSostav = function () {
-        button_sostav.addEventListener('click', function () {
+        button_sostav.addEventListener('click', function (e) {
+
+            main.style.transformOrigin = "50% " + e.pageY + 'px';
+
             document.body.classList.add('popap_open');
             popapSostav.classList.add('open');
         })
@@ -213,9 +216,13 @@ const interaqaJS = function () {
 
     const buttonProject = function () {
         for (var i = 0; i < button_project.length; i++) {                   
-            button_project[i].addEventListener('click', function () {
+            button_project[i].addEventListener('click', function (e) {
+
+                main.style.transformOrigin = "50% " + e.pageY + 'px';
+
                 document.body.classList.add('popap_open');
                 popapProject.classList.add('open');
+
             })
         }
     }

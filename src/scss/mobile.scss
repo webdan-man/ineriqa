@@ -1,4 +1,5 @@
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    body.is_mobile {
     h1 {
         font-size: 30px;
     }
@@ -564,4 +565,5 @@
             }
         }
     }
+}
 }

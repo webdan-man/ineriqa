@@ -51,6 +51,7 @@ body {
     }
     #main {
       transform: scale(0.95);
+      overflow-y: scroll;
       transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
   }
@@ -332,7 +333,7 @@ nav {
       @include font-regular;
       font-size: 20px;
       margin-top: 20px;
-      line-height: 1.2;
+      line-height: 30px;
     }
     .button {
       margin-top: 40px;
@@ -494,7 +495,7 @@ nav {
       }
       .right {
         margin-top: 30px;
-        width: 75%;
+        width: 960px;
         display: flex;
         flex-direction: column;
         h3 {
@@ -668,7 +669,7 @@ nav {
       flex-direction: row;
       padding-top: 30px;
       .img_whatsapp {
-        background-image: url(../img/phone.jpg);
+        background-image: url(../img/phone.png);
         width: 163px;
         height: 164px;
         min-width: 163px;
@@ -1040,7 +1041,7 @@ footer  {
   .close {
     position: absolute;
     right: 152px;
-    top: 40px;
+    top: 38px;
     z-index: 1;
   }
   .wrap {
