@@ -1,5 +1,4 @@
 @media (max-width: 480px) {
-    body.is_mobile {
     h1 {
         font-size: 30px;
     }
@@ -187,8 +186,10 @@
                 }
                 .img {
                     height: 340px!important;
-                    width: 100%;
+                    width: calc(100% + 50px);
                     border-radius: 0;
+                    margin-left: -25px;
+                    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.12);
                 }
                 &.step_start {
                     .step {
@@ -253,6 +254,9 @@
                             }
                         }
                     }
+                    .img {
+                        background-image: url(../img/step4_mobile.jpg);
+                    }
                     .step {
                         &::before {
                             background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #e95347 100%, #e95347 0%);
@@ -260,12 +264,16 @@
                     }
                 }
                 &.step0 {
-                    margin-top: 45px;
+                    margin-top: 70px;
                     .step {
                         background-image: url(../img/hi_man_mobile.png);
                         width: 73px;
                         height: 73px;
                         margin-left: 0;
+                        &::before {
+                            left: 36px;
+                            background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #e5e5e5 100%, #e5e5e5 0%);
+                        }
                     }
                     .right {
                         h2 {
@@ -295,7 +303,7 @@
                 margin-top: 62px;
                 padding: 24px 31px 0;
                 .img_whatsapp {
-                    background-image: url(../img/phone_mobile.jpg);
+                    background-image: url(../img/phone_mobile.png);
                     width: 150px;
                     height: 258px;
                     margin-top: 5px;
@@ -351,6 +359,9 @@
                             line-height: 58px;
                         }
                         input {
+                            width: 108px;
+                        }
+                        #count_input {
                             width: 108px;
                         }
                     }
@@ -430,7 +441,7 @@
                 &::before {
                     content: '';
                     position: absolute;
-                    background-image: url(../img/albom_mobile.jpg);
+                    background-image: url(../img/albom_mobile.png);
                     top: -141px;
                     left: 55px;
                     width: 321px;
@@ -565,5 +576,9 @@
             }
         }
     }
-}
+    .popap {
+        .wrap {
+            padding: 2px 25px 0;
+        }
+    }
 }

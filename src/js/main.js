@@ -69,7 +69,7 @@ const interaqaJS = function () {
 
     const popapScrollButtonAction = function () {        
         for (var i = 0; i < popapScrollButtons.length; i++) {
-            popapScrollButtons[i].addEventListener('click', handleButtonClick);
+            popapScrollButtons[i].addEventListener('click', handlePopapButtonClick);
         }
     }
 
@@ -81,7 +81,16 @@ const interaqaJS = function () {
 
     const handleButtonClick = function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'start' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+     }
+
+     const handlePopapButtonClick = function (e) {
+        e.preventDefault();
+        
+        setTimeout(function() {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 500);
+        const element = document.querySelector(this.getAttribute('href'));
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
@@ -155,10 +164,10 @@ const interaqaJS = function () {
         quantityNum.addEventListener('change', function () {
             const localValue = quantityNum.value.replace('м²','');
             if (+localValue > 999) {
-                quantityNum.value = 999;
+                quantityNum.value = '999м²';
             }
             if (+localValue < 1) {
-                quantityNum.value = 1;
+                quantityNum.value = '1м²';
             }
             formChange();
         });
