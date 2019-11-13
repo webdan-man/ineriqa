@@ -19,7 +19,7 @@ const interaqaJS = function () {
         popapScrollButtons = document.querySelectorAll('.popap_button_scroll'),
         quantityArrowMinus = document.querySelector(".minus"),
         quantityArrowPlus = document.querySelector(".plus"),
-        quantityNum = document.querySelector("#count_input"),
+        quantityNum = document.querySelector("#count_input input"),
         areaRoom = document.querySelector("#areaRoom"),
         totalCost = document.querySelector("#total-cost"),
         totalDay = document.querySelector("#total-day"),
@@ -38,7 +38,7 @@ const interaqaJS = function () {
             messengers
         ]
     ;
-    
+
     const init = function () {
         scrollButtonAction();
         openMenuToggle();
@@ -171,8 +171,10 @@ const interaqaJS = function () {
             }
             formChange();
         });
+
         quantityNum.oninput = function() {
-            quantityNum.value = quantityNum.value.replace (/\D/g, '') + 'м²';
+            quantityNum.value = quantityNum.value.replace(/\D/g, '') + 'м²';
+            quantityNum.style.width = quantityNum.value.length * 10 + 'px';
         }
     }
     

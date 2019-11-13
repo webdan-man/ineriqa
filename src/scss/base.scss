@@ -747,10 +747,20 @@ nav {
           }
           #count_input {
             width: 156px;
-            padding: 0;
-            text-align: center;
-            border: none;
-            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input {
+              width: 20px;
+              padding: 0;
+              text-align: center;
+              border: none;
+              box-shadow: none;
+            }
+            span {
+              font-size: 20px;
+              color: #383838;
+            }
           }
           .minus, .plus {
             text-align: center;

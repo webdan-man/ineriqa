@@ -172,13 +172,15 @@ html(lang="en")
                             label(for="count_input") Площадь объекта
                             .count_input
                                 button(type='button').minus -
-                                input#count_input(type="text", name="area", value="75м²")
+                                #count_input
+                                    input(type="text", maxLength="5", name="area", value="75")
+                                    span м²
                                 button(type='button').plus +
 
                         .input
                             input(type="text", name="name", placeholder="Ваше имя", required)
                         .input
-                            input(type="text", name="phone", placeholder="Номер телефона", required)
+                            input(type="tel", name="phone", placeholder="Номер телефона", required)
                     .form_grup.price
                         p Предварительная стоимость
                         .right
