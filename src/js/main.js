@@ -117,14 +117,12 @@ const interaqaJS = function () {
             } else changePhoneNode(contact_info_footer);
         })(navigator.userAgent||navigator.vendor||window.opera);
     };
-
     const removeElement = function () {
         removeArray.forEach(element => {
 
             element.parentNode.removeChild(element);
         })
     };
-    
     const changePhoneNode = function (element) {
         let newSpan = document.createElement('span');
         let spanTextNode = document.createTextNode(element.querySelector('.phone').innerHTML);
