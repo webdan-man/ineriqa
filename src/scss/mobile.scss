@@ -539,6 +539,11 @@
         }
         .img {
             margin: 33px auto 0;
+            max-height: 576px;
+            height: 100%;
+            img {
+                height: 100%;
+            }
         }
         .galery {
             .img {
