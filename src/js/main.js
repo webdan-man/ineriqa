@@ -45,7 +45,6 @@ const interaqaJS = function () {
         laptopCheck();
         mobilecheck();
         changePhoneNode(contact_info);
-        changePhoneNode(contact_info_footer);
         quantityProducts();
         checkText();
         // checkPhone();
@@ -115,7 +114,7 @@ const interaqaJS = function () {
                     removeElement();
                     console.log('is mobile :)');
                 }
-            }
+            } else changePhoneNode(contact_info_footer);
         })(navigator.userAgent||navigator.vendor||window.opera);
     };
 
@@ -145,42 +144,45 @@ const interaqaJS = function () {
 
     const quantityProducts = function () {
         quantityArrowMinus.addEventListener('click', function () {
-            const localValue = quantityNum.value.replace('м²','');
+            const localValue = quantityNum.value;
             if (+localValue > 1 ) {
-                quantityNum.value = +localValue - 1 + 'м²';
+                quantityNum.value = +localValue - 1;
                 formChange();
             }
         });
         quantityArrowPlus.addEventListener('click', function () {
-            const localValue = quantityNum.value.replace('м²','');
+            const localValue = quantityNum.value;
             if (+localValue > 0 && localValue < 999) {
-                quantityNum.value = +localValue + 1 + 'м²';
+                quantityNum.value = +localValue + 1;
                 formChange();
             }
         });
         quantityNum.addEventListener('change', function () {
-            const localValue = quantityNum.value.replace('м²','');
+            const localValue = quantityNum.value;
             if (+localValue > 999) {
-                quantityNum.value = '999м²';
+                quantityNum.value = 999;
             }
             if (+localValue < 1) {
-                quantityNum.value = '1м²';
+                quantityNum.value = 1;
             }
             formChange();
         });
 
         quantityNum.oninput = function() {
-            quantityNum.value = quantityNum.value.replace(/\D/g, '') + 'м²';
-            document.querySelector('#count_input input').style.width = quantityNum.value.length * 12 + 'px';
+            quantityNum.value = quantityNum.value.replace(/\D/g, '');
+            document.querySelector('#count_input span').style.marginLeft = quantityNum.value.length * 3 + 'px';
+            document.querySelector('#count_input input').style.paddingRight = quantityNum.value.length * 6 + 'px';
         }
     }
     
     const formChange = function () {
-        const localValue = quantityNum.value.replace('м²','');
+        const localValue = quantityNum.value;
         areaRoom.textContent = localValue;
         const rez = +localValue * 2500;
         totalCost.textContent = rez.toLocaleString('ru')
         totalDayFunk(localValue);
+        document.querySelector('#count_input span').style.marginLeft = localValue.length * 3 + 'px';
+        document.querySelector('#count_input input').style.paddingRight = quantityNum.value.length * 6 + 'px';
     }
 
     const totalDayFunk = function (val) {
