@@ -82,15 +82,13 @@ const interaqaJS = function () {
     const handleButtonClick = function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if(this.closest('#main')) this.closest('#main').classList.remove('open');
      }
 
      const handlePopapButtonClick = function (e) {
         e.preventDefault();
-        
-        setTimeout(function() {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 500);
         const element = document.querySelector(this.getAttribute('href'));
+        setTimeout(element.scrollIntoView({ behavior: 'smooth', block: 'start' }), 500);
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');

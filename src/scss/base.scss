@@ -10,7 +10,7 @@
 *{margin:0;padding:0;box-sizing:border-box;background-position:center;background-repeat:no-repeat}
 a:after,a:before,br:after,br:before,img:after,img:before,span:after,span:before,sup:after,sup:before,table:after,table:before,td:after,td:before,tr:after,tr:before{content:none}
 a{text-decoration:none;color:inherit;outline:0!important}
-button,input,textarea{outline:0; background: none; border: none;-webkit-tap-highlight-color: rgba(0,0,0,0); tap-highlight-color: transparent;}
+button,input,textarea{outline:0; background: none; border: none;-webkit-tap-highlight-color: rgba(0,0,0,0)}
 h1, h2, h3 {@include font-bold;}
 h1 { font-size: 40px; }
 h2 { font-size: 36px; }

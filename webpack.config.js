@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const PAGES_DIR = `${path.join(__dirname, 'src')}/pug/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
@@ -22,7 +23,8 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
+                    'postcss-loader'
                 ],
             },
             {

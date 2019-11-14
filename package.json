@@ -38,5 +38,9 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0",
     "webpack-livereload-plugin": "^2.2.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.1",
+    "postcss-loader": "^3.0.0"
   }
 }
