@@ -1098,12 +1098,12 @@ footer  {
   }
   .img {
     margin: 63px auto 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     img {
       object-fit: cover;
-      width: 100%;
+      width: 100vw;
     }
   }
   .galery {
