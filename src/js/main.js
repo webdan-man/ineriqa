@@ -258,7 +258,6 @@ const interaqaJS = function () {
         })
 
     }
-    // м²
     init();
 };
 
