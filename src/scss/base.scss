@@ -1101,9 +1101,11 @@ footer  {
     width: 100vw;
     display: flex;
     justify-content: center;
+    height: auto;
     img {
       object-fit: cover;
       width: 100vw;
+      height: auto;
     }
   }
   .galery {
@@ -1134,7 +1136,6 @@ footer  {
     }
   }
 }
-
 .menu_button {
   width: 28px;
   height: 25px;
