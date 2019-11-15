@@ -80,14 +80,13 @@ const interaqaJS = function () {
 
     const handleButtonClick = function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top}, 1000)
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
      }
 
      const handlePopapButtonClick = function (e) {
         e.preventDefault();
-        const element = document.querySelector(this.getAttribute('href'));
-        setTimeout(element.scrollIntoView({ behavior: 'smooth', block: 'start' }), 500);
+        $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top}, 1000)
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
