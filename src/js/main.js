@@ -131,7 +131,6 @@ const interaqaJS = function () {
         element.removeChild(element.querySelector('.phone'))
         element.appendChild(newSpan);
     };
-
     const addNavInfo = function () {
         let newDiv = document.createElement('div');
         newDiv.className = "nav_info";
@@ -139,7 +138,6 @@ const interaqaJS = function () {
         newDiv.appendChild(messengers_clone);
         nav.appendChild(newDiv);
     }
-
     const quantityProducts = function () {
         quantityArrowMinus.addEventListener('click', function () {
             const localValue = quantityNum.value;
