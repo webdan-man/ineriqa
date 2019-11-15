@@ -540,6 +540,10 @@
         .img {
             margin: 33px auto 0;
             width: 100vw;
+            height: 288px;
+            &.mobile-height {
+                height: 576px;
+            }
             img {
                 width: 100vw;
             }
