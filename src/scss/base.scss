@@ -42,7 +42,6 @@ body {
   color: #383838;
   background-color: #f8f7f3;
   text-size-adjust: 100%;
-  scroll-behavior: smooth;
   &.popap_open {
     overflow: hidden;
     .popap_overlay {
@@ -354,8 +353,8 @@ nav {
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      padding: 27px 12.5%;
-      justify-content: space-between;
+      padding: 27px 0;
+      justify-content: center;
       .item {
         display: flex;
         align-items: center;
@@ -1128,12 +1127,15 @@ footer  {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
   width: 100%;
   margin-top: 88px;
-  padding-bottom: 102px;
+  padding-bottom: 70px;
   .wrap {
     h2 {
       margin-top: 88px;
       background-image: url(../img/hand.png);
       background-position: right;
+      br {
+        display: none;
+      }
     }
     .button {
       margin-top: 42px;

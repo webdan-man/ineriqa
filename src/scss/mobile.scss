@@ -218,6 +218,7 @@
                         height: 73px;
                         background-image: url(../img/hi_girl_mobile.png);
                         margin-left: 0;
+                        background-size: 57.5%;
                     }
                 }
                 &.step1 {
@@ -291,6 +292,7 @@
                         width: 73px;
                         height: 73px;
                         margin-left: 0;
+                        background-size: 57.5%;
                         &::before {
                             left: 36px;
                             background-image: linear-gradient(0deg, transparent, transparent 75%, #fff 75%, #fff 100%), linear-gradient(0deg, #e5e5e5 100%, #e5e5e5 0%);

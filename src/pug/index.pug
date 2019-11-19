@@ -257,7 +257,9 @@ html(lang="en")
                                 li.li= item
                     .footer
                         .wrap
-                            h2 Рассчитайте стоимость проекта
+                            h2 Рассчитайте стоимость
+                                br.br_mobile
+                                | проекта
                                 br
                                 | для вашей квартиры
                             a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
@@ -271,25 +273,27 @@ html(lang="en")
                         img(src=require("../img/project/project.jpg"), alt="interiqa")
                     .galery
                         - var list = [
-                        - { url: require("../img/project/img1.jpg"), width: 1280 },
-                        - { url: require("../img/project/img2.jpg"), width: 1280 },
-                        - { url: require("../img/project/img3.jpg"), width: 1280 },
-                        - { url: require("../img/project/img4.jpg"), class: 'mobile-height' },
-                        - { url: require("../img/project/img5.jpg"), class: 'mobile-height' },
-                        - { url: require("../img/project/img6.jpg"), width: 1280 },
-                        - { url: require("../img/project/img7.jpg"), class: 'mobile-height' },
-                        - { url: require("../img/project/img8.jpg"), width: 1280 },
-                        - { url: require("../img/project/img9.jpg"), class: 'mobile-height' },
-                        - { url: require("../img/project/img10.jpg"), width: 1280 },
-                        - { url: require("../img/project/img11.jpg"), width: 1280 },
-                        - { url: require("../img/project/img12.jpg"), class: 'mobile-height' }
+                        - { url: require("../img/project/img1.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img2.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img3.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img4.jpg") },
+                        - { url: require("../img/project/img5.jpg") },
+                        - { url: require("../img/project/img6.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img7.jpg") },
+                        - { url: require("../img/project/img8.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img9.jpg") },
+                        - { url: require("../img/project/img10.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img11.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img12.jpg") }
                         - ]
                         each img in list
                             .img(class= img.class ? img.class : '')
                                 img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
                     .footer
                         .wrap
-                            h2 Рассчитайте стоимость проекта
+                            h2 Рассчитайте стоимость
+                                br.br_mobile 
+                                | проекта
                                 br
                                 | для вашей квартиры
                             a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
