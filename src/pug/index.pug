@@ -178,7 +178,7 @@ html(lang="en")
                             .count_input
                                 button(type='button').minus -
                                 #count_input
-                                    input(type="number", maxLength="5", name="area", value="75")
+                                    input(type="number", maxLength="5", name="area", value="75", pattern="\d*")
                                     span м²
                                 button(type='button').plus +
 
@@ -238,59 +238,61 @@ html(lang="en")
             .popap_overlay
             section.popap#sostav
                 button.close
-                .wrap
-                    h2 Состав проекта
-                    p Дизайн-проект состоит из набора схем, чертежей и визуализаций для ремонта вашей квартиры и интуитивно понятен как заказчику так и исполнителю. С ним мастера смогут быстро рассчитать стоимость и выполнить необходимые работы, а вы сможете легко контролировать весь процесс и сразу закупить все необходимое.
-                .img 
-                    img(src=require("../img/project_sostav.jpg"), alt="interiqa")
-                .wrap
-                    - var list = [
-                    - "— Обмерный план;", "— План расстановки мебели;", "— 3d визуализации помещений;", "— План демонтажа;", "— План монтажа;", "— Схема расположения дверей;", 
-                    - "— Схема расположения сантехнического оборудования;", "— План полов с отметками;", "— План потолков с высотами и привязками;", "— Общая схема электрики с привязками;",
-                    - "— Схема освещения с привязками;", "— Схема освещения по группам;", "—Схема расположения теплых полов;", "— Схема установки кондиционеров;", 
-                    - "— Развертки по стенам всех помещений объекта;", "— Схемы раскладки плитки;", "— Чертежи нетиповых деталей и встроенной мебели (если имеются);", "— Спецификация дверей;", 
-                    - "— Спецификация сантехнического оборудования;", "— Спецификация материалов для чистовой отделки помещений;", "— Спецификация мебели;", "— Спецификация осветительных приборов, выключателей и розеток;"
-                    - ]
-                    ul.ul
-                        each item in list
-                            li.li= item
-                .footer
+                .box
                     .wrap
-                        h2 Рассчитайте стоимость проекта
-                            br
-                            | для вашей квартиры
-                        a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
+                        h2 Состав проекта
+                        p Дизайн-проект состоит из набора схем, чертежей и визуализаций для ремонта вашей квартиры и интуитивно понятен как заказчику так и исполнителю. С ним мастера смогут быстро рассчитать стоимость и выполнить необходимые работы, а вы сможете легко контролировать весь процесс и сразу закупить все необходимое.
+                    .img 
+                        img(src=require("../img/project_sostav.jpg"), alt="interiqa")
+                    .wrap
+                        - var list = [
+                        - "— Обмерный план;", "— План расстановки мебели;", "— 3d визуализации помещений;", "— План демонтажа;", "— План монтажа;", "— Схема расположения дверей;", 
+                        - "— Схема расположения сантехнического оборудования;", "— План полов с отметками;", "— План потолков с высотами и привязками;", "— Общая схема электрики с привязками;",
+                        - "— Схема освещения с привязками;", "— Схема освещения по группам;", "—Схема расположения теплых полов;", "— Схема установки кондиционеров;", 
+                        - "— Развертки по стенам всех помещений объекта;", "— Схемы раскладки плитки;", "— Чертежи нетиповых деталей и встроенной мебели (если имеются);", "— Спецификация дверей;", 
+                        - "— Спецификация сантехнического оборудования;", "— Спецификация материалов для чистовой отделки помещений;", "— Спецификация мебели;", "— Спецификация осветительных приборов, выключателей и розеток;"
+                        - ]
+                        ul.ul
+                            each item in list
+                                li.li= item
+                    .footer
+                        .wrap
+                            h2 Рассчитайте стоимость проекта
+                                br
+                                | для вашей квартиры
+                            a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
             section.popap#project
                 button.close
-                .wrap
-                    h2 Квартира-студия, 47 м2
-                    p Москва, ЖК «RedSide»
-                .img
-                    img(src=require("../img/project/project.jpg"), alt="interiqa")
-                .galery
-                    - var list = [
-                    - { url: require("../img/project/img1.jpg"), width: 1280 },
-                    - { url: require("../img/project/img2.jpg"), width: 1280 },
-                    - { url: require("../img/project/img3.jpg"), width: 1280 },
-                    - { url: require("../img/project/img4.jpg"), class: 'mobile-height' },
-                    - { url: require("../img/project/img5.jpg"), class: 'mobile-height' },
-                    - { url: require("../img/project/img6.jpg"), width: 1280 },
-                    - { url: require("../img/project/img7.jpg"), class: 'mobile-height' },
-                    - { url: require("../img/project/img8.jpg"), width: 1280 },
-                    - { url: require("../img/project/img9.jpg"), class: 'mobile-height' },
-                    - { url: require("../img/project/img10.jpg"), width: 1280 },
-                    - { url: require("../img/project/img11.jpg"), width: 1280 },
-                    - { url: require("../img/project/img12.jpg"), class: 'mobile-height' }
-                    - ]
-                    each img in list
-                        .img(class= img.class ? img.class : '')
-                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
-                .footer
+                .box
                     .wrap
-                        h2 Рассчитайте стоимость проекта
-                            br
-                            | для вашей квартиры
-                        a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
+                        h2 Квартира-студия, 47 м2
+                        p Москва, ЖК «RedSide»
+                    .img
+                        img(src=require("../img/project/project.jpg"), alt="interiqa")
+                    .galery
+                        - var list = [
+                        - { url: require("../img/project/img1.jpg"), width: 1280 },
+                        - { url: require("../img/project/img2.jpg"), width: 1280 },
+                        - { url: require("../img/project/img3.jpg"), width: 1280 },
+                        - { url: require("../img/project/img4.jpg"), class: 'mobile-height' },
+                        - { url: require("../img/project/img5.jpg"), class: 'mobile-height' },
+                        - { url: require("../img/project/img6.jpg"), width: 1280 },
+                        - { url: require("../img/project/img7.jpg"), class: 'mobile-height' },
+                        - { url: require("../img/project/img8.jpg"), width: 1280 },
+                        - { url: require("../img/project/img9.jpg"), class: 'mobile-height' },
+                        - { url: require("../img/project/img10.jpg"), width: 1280 },
+                        - { url: require("../img/project/img11.jpg"), width: 1280 },
+                        - { url: require("../img/project/img12.jpg"), class: 'mobile-height' }
+                        - ]
+                        each img in list
+                            .img(class= img.class ? img.class : '')
+                                img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                    .footer
+                        .wrap
+                            h2 Рассчитайте стоимость проекта
+                                br
+                                | для вашей квартиры
+                            a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
         .vcard
             div
                 span.fn.org interiqa
