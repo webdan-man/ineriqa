@@ -178,7 +178,7 @@ html(lang="en")
                             .count_input
                                 button(type='button').minus -
                                 #count_input
-                                    input(type="number", maxLength="5", name="area", value="75", pattern="\d*")
+                                    input(type="number", maxLength="5", name="area", value="75", pattern="[0-9]{,3}")
                                     span м²
                                 button(type='button').plus +
 
@@ -257,10 +257,10 @@ html(lang="en")
                                 li.li= item
                     .footer
                         .wrap
-                            h2 Рассчитайте стоимость
-                                br.br_mobile
-                                | проекта
-                                br
+                            h2 Рассчитайте стоимость 
+                                br.br_mobile 
+                                | проекта 
+                                br 
                                 | для вашей квартиры
                             a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
             section.popap#project
@@ -273,14 +273,14 @@ html(lang="en")
                         img(src=require("../img/project/project.jpg"), alt="interiqa")
                     .galery
                         - var list = [
-                        - { url: require("../img/project/img1.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img1.jpg"), width: 1280 },
                         - { url: require("../img/project/img2.jpg"), width: 1280, class: 'mobile-height' },
                         - { url: require("../img/project/img3.jpg"), width: 1280, class: 'mobile-height' },
                         - { url: require("../img/project/img4.jpg") },
                         - { url: require("../img/project/img5.jpg") },
                         - { url: require("../img/project/img6.jpg"), width: 1280, class: 'mobile-height' },
                         - { url: require("../img/project/img7.jpg") },
-                        - { url: require("../img/project/img8.jpg"), width: 1280, class: 'mobile-height' },
+                        - { url: require("../img/project/img8.jpg"), width: 1280 },
                         - { url: require("../img/project/img9.jpg") },
                         - { url: require("../img/project/img10.jpg"), width: 1280, class: 'mobile-height' },
                         - { url: require("../img/project/img11.jpg"), width: 1280, class: 'mobile-height' },
@@ -291,10 +291,10 @@ html(lang="en")
                                 img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
                     .footer
                         .wrap
-                            h2 Рассчитайте стоимость
+                            h2 Рассчитайте стоимость 
                                 br.br_mobile 
-                                | проекта
-                                br
+                                | проекта 
+                                br 
                                 | для вашей квартиры
                             a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
         .vcard
