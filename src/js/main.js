@@ -84,7 +84,7 @@ const interaqaJS = function () {
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
      }
 
-     const handlePopapButtonClick = function (e) {
+    const handlePopapButtonClick = function (e) {
         e.preventDefault();
         const $href = $($(this).attr('href')) ;
         setTimeout(function(){
@@ -93,7 +93,7 @@ const interaqaJS = function () {
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
         if(this.closest('#main')) this.closest('#main').classList.remove('open');
-     }
+    }
 
     const openMenuToggle = function () {
         menu.addEventListener('click', function(e) {        
