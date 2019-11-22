@@ -270,6 +270,8 @@ header {
       height: 40px;
       display: inline-block;
       margin: 0 15px;
+      overflow: hidden;
+      border-radius: 12px;
     }
   }
 }
@@ -905,6 +907,8 @@ footer  {
             height: 40px;
             display: inline-block;
             margin-right: 29px;
+            overflow: hidden;
+            border-radius: 12px;
           }
         }
         .contact_info {
@@ -961,6 +965,9 @@ footer  {
             left: 0;
             transition: 0.1s;
           }
+        }
+        img {
+          border-radius: 12px;
         }
       }
     }
