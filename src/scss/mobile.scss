@@ -628,4 +628,38 @@
             padding: 2px 25px 0;
         }
     }
+    #thank {
+        header {
+          position: relative;
+        }
+        section {
+            margin-top: 27px;
+          .wrap {
+            h2 {
+                font-size: 30px;
+                br {
+                    display: inline-block;
+                }
+              &::after{
+                width: 49px;
+                height: 48px;
+                right: 25px;
+                top: 12px;
+              }
+            }
+            p {
+                font-size: 18px;
+                line-height: 27px;
+                margin-top: 18px;
+                br {
+                    display: none;
+                }
+            }
+            .button_sostav {
+                margin-top: 196px;
+                width: 100%;
+            }
+          }
+        }
+      }
 }

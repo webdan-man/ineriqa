@@ -18,54 +18,54 @@ module.exports = {
         publicPath: ''
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                  loader: "babel-loader",
-                  options: {
-                    presets: ["@babel/preset-env"]
-                  }
+      rules: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: ["@babel/preset-env"]
+              }
+            }
+        },
+        {
+            test: /\.(scss|css)$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'sass-loader',
+                'postcss-loader'
+            ],
+        },
+        {
+            test: /\.pug$/,
+            loader: 'pug-loader'
+        },
+        {
+            test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+                  outputPath: 'fonts/'
                 }
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                    'postcss-loader'
-                ],
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader'
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '[name].[ext]',
-                      outputPath: 'fonts/'
-                    }
-                  }
-                ]
-            },
-            {
-              test: /\.(png|jp(e*)g|svg)$/,  
-              use: [{
-                  loader: 'url-loader',
-                  options: { 
-                        emitFile: true,
-                      limit: 8000, // Convert images < 8kb to base64 strings
-                      name: 'img/[hash].[ext]'
-                  } 
-              }]
-          },
-        ],
+              }
+            ]
+        },
+        {
+          test: /\.(png|jp(e*)g|svg)$/,  
+          use: [{
+              loader: 'url-loader',
+              options: { 
+                  emitFile: true,
+                  limit: 8000, // Convert images < 8kb to base64 strings
+                  name: 'img/[hash].[ext]'
+              } 
+          }]
+        },
+      ],
     },
     plugins: [
         new MiniCssExtractPlugin({

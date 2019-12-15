@@ -9,14 +9,13 @@ html(lang="en")
         link(rel="apple-touch-icon", href=require("../apple-touch-icon-180x180.png"), sizes="180x180")
         title interiqa | Студия дизайна интерьера
         meta(name="viewport", content="width=device-width, initial-scale=1")
-        style
     body
         //#maket
         #main
             header
                 .wrap
                     .header
-                        a.logo(href="http://interiqa.ru/")
+                        a.logo(href="./")
                             img(src=require("../img/logo.svg"), height="41", width="190", alt="interiqa")
                         .header_right
                             .contact_info
@@ -73,18 +72,18 @@ html(lang="en")
                     h2 Спроектировано
                     .project_grup
                         - var list = [
-                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
-                        - { url: require('../img/project.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»' },
+                        - { url: require('../img/project1.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»', class: 'project1' },
+                        - { url: require('../img/project2.jpg'), title: '3-х комнатная квартира, 102 м²', text: 'Москва, ул.Большая Никитская 43', class: 'project2' },
+                        - { url: require('../img/project3.jpg'), title: '3-х комнатная квартира, 82 м²', text: 'Москва, ЖК «Ривер Парк»', class: 'project3' },
+                        - { url: require('../img/project4.jpg'), title: 'Квартира-студия, 34 м²', text: 'Москва, ЖК «Влюблино»', class: 'project4' },
                         - ]
                         each item in list
-                            .item.button_project
+                            .item(class= item.class)
                                 .img
                                     img(src= item.url, alt= item.title)
                                 .text
-                                    .title= item.title
-                                    p= item.text
+                                    p= item.title
+                                    span= item.text
             section.section4#section4
                 .wrap
                     h2 Делаем с любовью и в срок
@@ -266,29 +265,6 @@ html(lang="en")
             section.popap#project
                 button.close
                 .box
-                    .wrap
-                        h2 Квартира-студия, 47 м2
-                        p Москва, ЖК «RedSide»
-                    .img
-                        img(src=require("../img/project/project.jpg"), alt="interiqa")
-                    .galery
-                        - var list = [
-                        - { url: require("../img/project/img1.jpg"), width: 1280 },
-                        - { url: require("../img/project/img2.jpg"), width: 1280, class: 'mobile-height' },
-                        - { url: require("../img/project/img3.jpg"), width: 1280, class: 'mobile-height' },
-                        - { url: require("../img/project/img4.jpg") },
-                        - { url: require("../img/project/img5.jpg") },
-                        - { url: require("../img/project/img6.jpg"), width: 1280, class: 'mobile-height' },
-                        - { url: require("../img/project/img7.jpg") },
-                        - { url: require("../img/project/img8.jpg"), width: 1280 },
-                        - { url: require("../img/project/img9.jpg") },
-                        - { url: require("../img/project/img10.jpg"), width: 1280, class: 'mobile-height' },
-                        - { url: require("../img/project/img11.jpg"), width: 1280, class: 'mobile-height' },
-                        - { url: require("../img/project/img12.jpg") }
-                        - ]
-                        each img in list
-                            .img(class= img.class ? img.class : '')
-                                img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
                     .footer
                         .wrap
                             h2 Рассчитайте стоимость 
@@ -297,6 +273,118 @@ html(lang="en")
                                 br 
                                 | для вашей квартиры
                             a.button.popap_button_scroll(href="#section6") Рассчитать стоимость
+        #hidden
+            #project1
+                .wrap
+                    h2 Квартира-студия, 47 м2
+                    p Москва, ЖК «RedSide»
+                .img
+                    img(src=require("../img/project/project.jpg"), alt="interiqa")
+                .galery
+                    - var list = [
+                    - { url: require("../img/project/img1.jpg"), width: 1280 },
+                    - { url: require("../img/project/img2.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project/img3.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project/img4.jpg") },
+                    - { url: require("../img/project/img5.jpg") },
+                    - { url: require("../img/project/img6.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project/img7.jpg") },
+                    - { url: require("../img/project/img8.jpg"), width: 1280 },
+                    - { url: require("../img/project/img9.jpg") },
+                    - { url: require("../img/project/img10.jpg"), width: 1280    },
+                    - { url: require("../img/project/img11.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project/img12.jpg") }
+                    - ]
+                    each img in list
+                        .img(class= img.class ? img.class : '')
+                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+            #project2
+                .wrap
+                    h2 Квартира-студия, 47 м2
+                    p Москва, ЖК «RedSide»
+                .img
+                    img(src=require("../img/project2/project.jpg"), alt="interiqa")
+                .galery
+                    - var list = [
+                    - { url: require("../img/project2/img1.jpg") },
+                    - { url: require("../img/project2/img2.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img3.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img4.jpg"), width: 1280 },
+                    - { url: require("../img/project2/img5.jpg") },
+                    - { url: require("../img/project2/img6.jpg"), width: 1280 },
+                    - { url: require("../img/project2/img7.jpg") },
+                    - { url: require("../img/project2/img8.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img9.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img10.jpg") },
+                    - { url: require("../img/project2/img11.jpg"), width: 1280 },
+                    - { url: require("../img/project2/img12.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img13.jpg") },
+                    - { url: require("../img/project2/img14.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img15.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img16.jpg") },
+                    - { url: require("../img/project2/img17.jpg") },
+                    - { url: require("../img/project2/img18.jpg"), width: 1280 },
+                    - { url: require("../img/project2/img19.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img20.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project2/img21.jpg") },
+                    - { url: require("../img/project2/img22.jpg") }
+                    - ]
+                    each img in list
+                        .img(class= img.class ? img.class : '')
+                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+            #project3
+                .wrap
+                    h2 Квартира-студия, 47 м2
+                    p Москва, ЖК «RedSide»
+                .img
+                    img(src=require("../img/project3/project.jpg"), alt="interiqa")
+                .galery
+                    - var list = [
+                    - { url: require("../img/project3/img1.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img2.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img3.jpg") },
+                    - { url: require("../img/project3/img4.jpg") },
+                    - { url: require("../img/project3/img5.jpg") },
+                    - { url: require("../img/project3/img6.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project3/img7.jpg") },
+                    - { url: require("../img/project3/img8.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img9.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img10.jpg") },
+                    - { url: require("../img/project3/img11.jpg") },
+                    - { url: require("../img/project3/img12.jpg") },
+                    - { url: require("../img/project3/img13.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img14.jpg") },
+                    - { url: require("../img/project3/img15.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img16.jpg") },
+                    - { url: require("../img/project3/img17.jpg") },
+                    - { url: require("../img/project3/img18.jpg"), width: 1280 },
+                    - { url: require("../img/project3/img19.jpg") },
+                    - { url: require("../img/project3/img20.jpg") }
+                    - ]
+                    each img in list
+                        .img(class= img.class ? img.class : '')
+                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+            #project4
+                .wrap
+                    h2 Квартира-студия, 47 м2
+                    p Москва, ЖК «RedSide»
+                .img
+                    img(src=require("../img/project4/project.jpg"), alt="interiqa")
+                .galery
+                    - var list = [
+                    - { url: require("../img/project4/img1.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project4/img2.jpg"), width: 1280 },
+                    - { url: require("../img/project4/img3.jpg") },
+                    - { url: require("../img/project4/img4.jpg") },
+                    - { url: require("../img/project4/img5.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project4/img6.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project4/img7.jpg") },
+                    - { url: require("../img/project4/img8.jpg"), width: 1280, class: 'mobile-height' },
+                    - { url: require("../img/project4/img9.jpg") }
+                    - ]
+                    each img in list
+                        .img(class= img.class ? img.class : '')
+                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
         .vcard
             div
                 span.fn.org interiqa
