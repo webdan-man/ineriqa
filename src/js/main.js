@@ -247,14 +247,19 @@ const interaqaJS = function () {
                 main.style.transformOrigin = "50% " + e.pageY + 'px';
 
                 popapProject.classList = 'popap';
+
                 popapProjectBox.innerHTML = '';
                 popapProjectBox.insertAdjacentHTML('afterBegin', projectGaleries[index].innerHTML);
                 popapProjectBox.insertAdjacentHTML('beforeend', popapProjectFooter.innerHTML);
+
                 popapScrollButtonAction();
+
                 document.body.classList.add('popap_open');
+
                 popapProject.classList.add('open');
                 popapProject.classList.add('project' + (index+1));
-
+                
+                document.querySelector('#project').querySelector('.box').scrollTo(0, 0);
             })
         })
     }

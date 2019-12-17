@@ -432,6 +432,7 @@ nav {
             padding-left: 21px;
             background-position: left center;
             min-height: 13px;
+            display: inline-block;
           }
         }
         &.project1 {
@@ -533,6 +534,9 @@ nav {
             background-size: 1px 4px, 1px 100%;
           }
         }
+      }
+      .img {
+        background-size: cover;
       }
       .right {
         margin-top: 30px;
