@@ -310,7 +310,7 @@ if (window.location.pathname !== '/thank.html') {
                 //         alert('Success')
                 //     }
                 // });
-                window.location = './thank.html';
+                window.location.href = 'thank.html';
             } else {
                 alert('Error');
             }
