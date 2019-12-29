@@ -1,6 +1,6 @@
 'use strict';
 document.addEventListener("DOMContentLoaded", function() {
-    if (window.location.pathname !== '/thank.html') {
+    if (window.location.pathname.indexOf('/thank.html') === -1) {
         const interaqa = new interaqaJS();
     } else {
         if (document.documentElement.clientWidth <= 1100 && document.documentElement.clientWidth > 480) {
