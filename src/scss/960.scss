@@ -1,4 +1,28 @@
 @media all and (max-width: 1440px) {
+    .section1 {
+        .wrap {
+            max-width: 1100px;
+            & > * {
+            margin-left: 0px;
+            }
+        }
+    }
+    .section3 {
+        .wrap:first-of-type {
+            max-width: 1100px;
+            h2 {
+                margin-left: 0px;
+            }
+        }
+    }
+    .section4 {
+        .wrap {
+            max-width: 1100px;
+            & > * {
+            margin-left: 0px;
+            }
+        }
+    }
     .section5 {
         .wrap {
             max-width: 1100px;
@@ -59,13 +83,6 @@
         .wrap {
             .item_grup {
                 padding: 27px 0;
-            }
-        }
-    }
-    .section3 {
-        .wrap {
-            h2 {
-                margin-left: 0;
             }
         }
     }

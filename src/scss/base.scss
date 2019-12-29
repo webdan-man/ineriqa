@@ -7,7 +7,7 @@
 @mixin font-bold {
   font-family: TTNorms-Bold;
 }
-*{margin:0;padding:0;box-sizing:border-box;background-position:center;background-repeat:no-repeat}
+*{margin:0;padding:0;box-sizing:border-box;background-position:center;background-repeat:no-repeat;outline: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
 a:after,a:before,br:after,br:before,img:after,img:before,span:after,span:before,sup:after,sup:before,table:after,table:before,td:after,td:before,tr:after,tr:before{content:none}
 a{text-decoration:none;color:inherit;outline:0!important}
 button,input,textarea{outline:0; background: none; border: none;-webkit-tap-highlight-color: rgba(0,0,0,0)}
@@ -77,7 +77,7 @@ body {
   }
 }
 #maket {
-  background: url(../img/maket_thanks_mobile.jpg);
+  background: url(../img/maket_menu_480.jpg);
   position: absolute;
   top: 0;
   left: 0px;
@@ -172,7 +172,7 @@ button {
 header {
   position: absolute;
   top: 0;
-  padding-top: 45px;
+  padding-top: 40px;
   left: 0;
   right: 0;
   z-index: 4;
@@ -181,33 +181,72 @@ header {
     @include content;
     background: rgb(249, 248, 245);
     height: 0;
-    top: -45px;
+    top: -40px;
     left: 0;
     right: 0;
   }
   .wrap {
     display: flex;
     flex-direction: column;
-    .header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      .logo {
-        img {
-          display: inline-block;
-          object-fit: cover;
-        }
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    img {
+      display: inline-block;
+      object-fit: cover;
+    }
+  }
+}
+.menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+  padding: 14px;
+  position: fixed;
+  top: 38px;
+  right: 0;
+  z-index: 11;
+  &:hover {
+    .text {
+      &::after {
+        background: #383838;
+        transition: all 0.1s;
       }
+    }
+  }
+  .text {
+    @include font-medium;
+    font-size: 16px;
+    margin-right: 19px;
+    display: inline-block;
+    position: relative;
+    &::after {
+      @include content;
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      transition: all 0.1s;
     }
   }
 }
 .header_right, .nav_info {
   display: flex;
   align-items: center;
+  margin-right: 120px;
   .contact_info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 5px;
     .phone {
       font-size: 24px;
       margin-top: 3px;
@@ -236,37 +275,8 @@ header {
       }
     }
   }
-  .menu {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-top: -2px;
-    &:hover {
-      .text {
-        &::after {
-          background: #383838;
-          transition: all 0.1s;
-        }
-      }
-    }
-    .text {
-      @include font-medium;
-      font-size: 16px;
-      margin-right: 19px;
-      display: inline-block;
-      position: relative;
-      &::after {
-        @include content;
-        height: 1px;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        transition: all 0.1s;
-      }
-    }
-  }
   .messengers {
-    margin: -2px 35px 0 15px;
+    margin: 2px 30px 0 14px;
     display: flex;
     a {
       width: 40px;
@@ -281,21 +291,22 @@ header {
 nav {
   background-color: rgb(249, 248, 245);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
-  padding: 160px 0 100px;
+  padding: 40px 0 100px;
   width: 100%;
-  z-index: 3;
-  position: absolute;
+  z-index: 10;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 0;
   transition: all .3s linear;
   visibility: hidden;
   .wrap {
-    padding: 0 12% 0;
     .menu_list {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      padding: 0 12% 0;
+      margin-top: 120px;
       a {
         cursor: pointer;
         font-size: 30px;
@@ -336,7 +347,7 @@ nav {
   z-index: 2;
   .wrap {
     & > * {
-      margin-left: 12.5%;
+      margin-left: 160px;
     }
     p {
       @include font-regular;
@@ -413,6 +424,8 @@ nav {
           height: auto;
           overflow: hidden;
           display: flex;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
           img {
             width: 100%;
             height: 100%;
@@ -807,7 +820,7 @@ nav {
               color: #383838;
               position: absolute;
               left: 50%;
-              margin-left: 6px;
+              margin-left: 8px;
               z-index: 1;
               width: auto;
             }

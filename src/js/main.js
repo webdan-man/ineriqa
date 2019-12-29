@@ -74,6 +74,11 @@ const interaqaJS = function () {
         inputAction();
     };
 
+    const menuFixed = function () {
+        const rect = document.querySelector('nav .header').getBoundingClientRect();
+        menu.style.right = rect.x + 'px';
+    }
+
     const closeButtonAction = function () {
         closeButtons.forEach(closeButton => {
             closeButton.addEventListener('click', cloceButtonClick);
@@ -123,6 +128,7 @@ const interaqaJS = function () {
     const laptopCheck = function () {
         if (document.documentElement.clientWidth <= 1100 && document.documentElement.clientWidth > 480) {
             viewport.setAttribute('content', 'width=1100, initial-scale=1');
+            menuFixed();
             console.log('is laptop :)');
         }
     }
@@ -135,7 +141,10 @@ const interaqaJS = function () {
                     removeElement();
                     console.log('is mobile :)');
                 }
-            } else changePhoneNode(contact_info_footer);
+            } else {
+                changePhoneNode(contact_info_footer);
+                menuFixed();
+            }
         })(navigator.userAgent||navigator.vendor||window.opera);
     };
     const removeElement = function () {
@@ -187,7 +196,7 @@ const interaqaJS = function () {
 
         quantityNum.oninput = function() {
             quantityNum.value = quantityNum.value.replace(/\D/g, '');
-            document.querySelector('#count_input span').style.marginLeft = quantityNum.value.length * 3 + 'px';
+            document.querySelector('#count_input span').style.marginLeft = quantityNum.value.length * 4 + 'px';
             document.querySelector('#count_input input').style.paddingRight = quantityNum.value.length * 6 + 'px';
         }
     }
@@ -197,8 +206,9 @@ const interaqaJS = function () {
         areaRoom.textContent = localValue;
         const rez = +localValue * 2500;
         totalCost.textContent = rez.toLocaleString('ru')
+        document.querySelector('input[name="price"]').value = rez;
         totalDayFunk(localValue);
-        document.querySelector('#count_input span').style.marginLeft = localValue.length * 3 + 'px';
+        document.querySelector('#count_input span').style.marginLeft = localValue.length * 4 + 'px';
         document.querySelector('#count_input input').style.paddingRight = quantityNum.value.length * 6 + 'px';
     }
 
@@ -302,15 +312,14 @@ if (window.location.pathname !== '/thank.html') {
                 var type = $(this).attr('method');
                 var url = $(this).attr('action');
                 var data = $(this).serialize();
-                // $.ajax({
-                //     type: type,
-                //     url: url,
-                //     data: data,
-                //     success: function() {
-                //         alert('Success')
-                //     }
-                // });
-                window.location = './thank.html';
+                $.ajax({
+                    type: type,
+                    url: url,
+                    data: data,
+                    success: function() {
+                        window.location = './thank.html';
+                    }
+                });
             } else {
                 alert('Error');
             }

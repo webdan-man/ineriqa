@@ -25,6 +25,10 @@
     input {
         font-size: 22px;
     }
+    .menu {
+        top: 15px;
+        right: 25px;
+    }
     header {
         padding-top: 25px;
         .wrap {
@@ -53,7 +57,12 @@
         padding: 62px 0 65px;
         .wrap {
             padding: 45px 25px 0;
+            .header {
+                display: none;
+            }
             .menu_list {
+                padding: 0;
+                margin-top: 0;
                 p {
                     font-size: 22px;
                 }
@@ -70,6 +79,7 @@
     .nav_info {
         margin-top: 45px;
         justify-content: space-between;
+        margin-right: 0;
         .messengers {
             margin: 0;
         }
@@ -98,6 +108,7 @@
             p {
                 font-size: 18px;
                 margin-top: 16px;
+                line-height: 27px;
             }
             .button {
                 margin-top: 300px;
@@ -388,6 +399,9 @@
                         }
                         #count_input {
                             width: 108px;
+                            span {
+                                padding-top: 2px;
+                            }
                         }
                     }
                 }
@@ -618,6 +632,9 @@
                 margin-top: 62px;
                 font-size: 25px;
                 background-image: url(../img/hand_mobile.png);
+                br {
+                    display: none;
+                }
             }
             .button {
                 margin-top: 34px;

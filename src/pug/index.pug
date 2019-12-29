@@ -10,8 +10,15 @@ html(lang="en")
         title interiqa | Студия дизайна интерьера
         meta(name="viewport", content="width=device-width, initial-scale=1")
     body
-        //#maket
+        //- #maket
         #main
+            .menu
+                span.text Меню
+                .menu_button
+                    span
+                    span
+                    span
+                    span
             header
                 .wrap
                     .header
@@ -26,15 +33,20 @@ html(lang="en")
                                     img(src=require("../img/telegram.png"), height="40", width="40", alt="telegram")
                                 a(href="https://wa.me/79999617656", target="_blank", rel="noopener noreferrer")
                                     img(src=require("../img/whatsapp.png"), height="40", width="40", alt="whatsapp")
-                            .menu
-                                span.text Меню
-                                .menu_button
-                                    span
-                                    span
-                                    span
-                                    span
             nav
                 .wrap
+                    .header
+                        a.logo(href="./")
+                            img(src=require("../img/logo.svg"), height="41", width="190", alt="interiqa")
+                        .header_right
+                            .contact_info
+                                p Офис ежедневно с 10:00 до 20:00
+                                a.phone(href="tel:+7 495 755-24-00") +7 495 755-24-00
+                            .messengers
+                                a(href="tg://resolve?domain=@kmarkevich", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/telegram.png"), height="40", width="40", alt="telegram")
+                                a(href="https://wa.me/79999617656", target="_blank", rel="noopener noreferrer")
+                                    img(src=require("../img/whatsapp.png"), height="40", width="40", alt="whatsapp")
                     .menu_list
                         - var list = [
                         - { title: "Главная", href: '#section1' },
@@ -70,9 +82,10 @@ html(lang="en")
             section.section3#section3
                 .wrap
                     h2 Спроектировано
+                .wrap
                     .project_grup
                         - var list = [
-                        - { url: require('../img/project1.jpg'), title: 'Квартира-студия, 47 м²', text: 'Москва, ЖК «RedSide»', class: 'project1' },
+                        - { url: require('../img/project1.jpg'), title: 'Квартира-студия, 45 м²', text: 'Москва, ЖК «RedSide»', class: 'project1' },
                         - { url: require('../img/project2.jpg'), title: '3-х комнатная квартира, 102 м²', text: 'Москва, ул.Большая Никитская 43', class: 'project2' },
                         - { url: require('../img/project3.jpg'), title: '3-х комнатная квартира, 82 м²', text: 'Москва, ЖК «Ривер Парк»', class: 'project3' },
                         - { url: require('../img/project4.jpg'), title: 'Квартира-студия, 34 м²', text: 'Москва, ЖК «Влюблино»', class: 'project4' },
@@ -185,6 +198,7 @@ html(lang="en")
                             input(type="text", name="name", placeholder="Ваше имя", required)
                         .input
                             input(type="tel", name="phone", placeholder="Номер телефона", required)
+                        input(type="hidden", name="price", value="187 500")
                     .form_grup.price
                         p Предварительная стоимость
                         .right
@@ -276,7 +290,7 @@ html(lang="en")
         #hidden
             #project1
                 .wrap
-                    h2 Квартира-студия, 47 м2
+                    h2 Квартира-студия, 45 м²
                     p Москва, ЖК «RedSide»
                 .img
                     img(src=require("../img/project/project.jpg"), alt="interiqa")
