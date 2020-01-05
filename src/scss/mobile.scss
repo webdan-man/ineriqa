@@ -58,7 +58,18 @@
         .wrap {
             padding: 45px 25px 0;
             .header {
-                display: none;
+                position: fixed;
+                top: 25px;
+                left: 25px;
+                .logo {
+                    img {
+                        width: 156px;
+                        height: 33px;
+                    }
+                }
+                .header_right {
+                    display: none;
+                }
             }
             .menu_list {
                 padding: 0;

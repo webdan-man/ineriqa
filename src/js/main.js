@@ -72,6 +72,12 @@ const interaqaJS = function () {
         buttonProject([button_project1, button_project2, button_project3, button_project4]);
         closeButtonAction();
         inputAction();
+
+
+        window.onresize = function() {
+            menuFixed()
+        };
+
     };
 
     const menuFixed = function () {
@@ -127,7 +133,7 @@ const interaqaJS = function () {
     
     const laptopCheck = function () {
         if (document.documentElement.clientWidth <= 1100 && document.documentElement.clientWidth > 480) {
-            viewport.setAttribute('content', 'width=1100, initial-scale=1');
+            viewport.setAttribute('content', 'width=1100, initial-scale=' + window.screen.width / 1100 + ', user-scalable=no');
             menuFixed();
             console.log('is laptop :)');
         }
@@ -139,6 +145,9 @@ const interaqaJS = function () {
                     viewport.setAttribute('content', 'width=480, initial-scale=' + window.screen.width / 480 + ', user-scalable=no');
                     addNavInfo();
                     removeElement();
+                    document.addEventListener('touchmove', function (event) {
+                        if (event.scale !== 1) { event.preventDefault(); }
+                    }, false);
                     console.log('is mobile :)');
                 }
             } else {
