@@ -74,15 +74,23 @@ const interaqaJS = function () {
         inputAction();
 
 
-        window.onresize = function() {
-            menuFixed()
-        };
+        if (document.documentElement.clientWidth > 1100) {
+            const closeRect = popapProjectBox.querySelector('.wrap').getBoundingClientRect();
+            document.querySelectorAll('.close').forEach(element => {
+                element.style.left = closeRect.y + 175 + 'px';
+            })
+        }
+        if (document.documentElement.clientWidth > 480) {
+            window.onresize = function() {
+                menuFixed()
+            };
+        }
 
     };
 
     const menuFixed = function () {
         const rect = document.querySelector('nav .header').getBoundingClientRect();
-        menu.style.right = rect.x + 'px';
+        menu.style.left = rect.width - rect.y + 'px';
     }
 
     const closeButtonAction = function () {
@@ -111,7 +119,7 @@ const interaqaJS = function () {
     const handleButtonClick = function (e) {
         e.preventDefault();
         $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top }, 1000)
-        if(this.closest('#main')) this.closest('#main').classList.remove('open');
+        if(this.closest('body').querySelector('#main')) this.closest('body').querySelector('#main').classList.remove('open');
      }
 
     const handlePopapButtonClick = function (e) {
@@ -122,12 +130,12 @@ const interaqaJS = function () {
         }, 500)
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
-        if(this.closest('#main')) this.closest('#main').classList.remove('open');
+        if(this.closest('body').querySelector('#main')) this.closest('body').querySelector('#main').classList.remove('open');
     }
 
     const openMenuToggle = function () {
         menu.addEventListener('click', function(e) {        
-            e.target.closest('#main').classList.toggle('open');
+            e.target.closest('body').querySelector('#main').classList.toggle('open');
         })
     }
     
@@ -145,6 +153,7 @@ const interaqaJS = function () {
                     viewport.setAttribute('content', 'width=480, initial-scale=' + window.screen.width / 480 + ', user-scalable=no');
                     addNavInfo();
                     removeElement();
+                    menu.style.left = '';
                     document.addEventListener('touchmove', function (event) {
                         if (event.scale !== 1) { event.preventDefault(); }
                     }, false);
@@ -263,6 +272,9 @@ const interaqaJS = function () {
     const buttonProject = function (button_projects) {
         button_projects.forEach((button_project, index) => {
             button_project.addEventListener('click', function (e) {
+
+                this.closest('body').querySelector('#main').classList = '';
+
                 main.style.transformOrigin = "50% " + e.pageY + 'px';
 
                 popapProject.classList = 'popap';

@@ -212,7 +212,7 @@ header {
   padding: 14px;
   position: fixed;
   top: 38px;
-  right: 0;
+  left: 0;
   z-index: 11;
   &:hover {
     .text {
@@ -1072,6 +1072,7 @@ footer  {
   height: 0;
   overflow: hidden;
   visibility: hidden;
+  z-index: 12;
   .popap_overlay {
     position: fixed;
     top: 0;
