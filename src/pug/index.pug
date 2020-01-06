@@ -256,7 +256,7 @@ html(lang="en")
                         h2 Состав проекта
                         p Дизайн-проект состоит из набора схем, чертежей и визуализаций для ремонта вашей квартиры и интуитивно понятен как заказчику так и исполнителю. С ним мастера смогут быстро рассчитать стоимость и выполнить необходимые работы, а вы сможете легко контролировать весь процесс и сразу закупить все необходимое.
                     .img 
-                        img(src=require("../img/project_sostav.jpg"), alt="interiqa")
+                        img(data-src=require("../img/project_sostav.jpg"), alt="interiqa")
                     .wrap
                         - var list = [
                         - "— Обмерный план;", "— План расстановки мебели;", "— 3d визуализации помещений;", "— План демонтажа;", "— План монтажа;", "— Схема расположения дверей;", 
@@ -293,7 +293,7 @@ html(lang="en")
                     h2 Квартира-студия, 45 м²
                     p Москва, ЖК «RedSide»
                 .img
-                    img(src=require("../img/project/project.jpg"), alt="interiqa")
+                    img(data-src=require("../img/project/project.jpg"), alt="interiqa")
                 .galery
                     - var list = [
                     - { url: require("../img/project/img1.jpg"), width: 1280 },
@@ -311,13 +311,13 @@ html(lang="en")
                     - ]
                     each img in list
                         .img(class= img.class ? img.class : '')
-                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                            img(data-src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
             #project2
                 .wrap
                     h2 3-х комнатная квартира, 102 м²
                     p Москва, ул.Большая Никитская 43
                 .img
-                    img(src=require("../img/project2/project.jpg"), alt="interiqa")
+                    img(data-src=require("../img/project2/project.jpg"), alt="interiqa")
                 .galery
                     - var list = [
                     - { url: require("../img/project2/img1.jpg") },
@@ -345,13 +345,13 @@ html(lang="en")
                     - ]
                     each img in list
                         .img(class= img.class ? img.class : '')
-                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                            img(data-src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
             #project3
                 .wrap
                     h2 3-х комнатная квартира, 82 м²
                     p Москва, ЖК «Ривер Парк»
                 .img
-                    img(src=require("../img/project3/project.jpg"), alt="interiqa")
+                    img(data-src=require("../img/project3/project.jpg"), alt="interiqa")
                 .galery
                     - var list = [
                     - { url: require("../img/project3/img1.jpg"), width: 1280 },
@@ -377,13 +377,13 @@ html(lang="en")
                     - ]
                     each img in list
                         .img(class= img.class ? img.class : '')
-                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                            img(data-src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
             #project4
                 .wrap
                     h2 Квартира-студия, 34 м²
                     p Москва, ЖК «Влюблино»
                 .img
-                    img(src=require("../img/project4/project.jpg"), alt="interiqa")
+                    img(data-src=require("../img/project4/project.jpg"), alt="interiqa")
                 .galery
                     - var list = [
                     - { url: require("../img/project4/img1.jpg"), width: 1280, class: 'mobile-height' },
@@ -398,7 +398,7 @@ html(lang="en")
                     - ]
                     each img in list
                         .img(class= img.class ? img.class : '')
-                            img(src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
+                            img(data-src= img.url, alt="interiqa", style= img.width ? "max-width: " + img.width + "px" : '' )
         .vcard
             div
                 span.fn.org interiqa
@@ -410,4 +410,5 @@ html(lang="en")
                     span.value-title(title="http://interiqa.ru/")
                 </span>
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js")

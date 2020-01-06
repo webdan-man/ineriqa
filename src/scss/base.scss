@@ -56,6 +56,7 @@ body {
     }
     #popap {
       visibility: visible;
+      height: auto;
     }
   }
 }
@@ -424,8 +425,9 @@ nav {
           height: auto;
           overflow: hidden;
           display: flex;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
+          border-radius: 12px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
           img {
             width: 100%;
             height: 100%;
@@ -1065,14 +1067,14 @@ footer  {
   }
 }
 #popap {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  z-index: 12;
+  z-index: 100;
   .popap_overlay {
     position: fixed;
     top: 0;
@@ -1094,7 +1096,7 @@ footer  {
   position: fixed;
   &.open {
     overflow: hidden;
-    z-index: 7;
+    z-index: 100;
     transform: none;
     transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     .box {
@@ -1283,18 +1285,18 @@ footer  {
 .menu_button span:nth-child(4) {
   top: 22px;
 }
-#main.open .menu_button span:nth-child(1) {
+.menu.open .menu_button span:nth-child(1) {
   top: 11px;
   width: 0%;
   left: 50%;
 }
-#main.open .menu_button span:nth-child(2) {
+.menu.open .menu_button span:nth-child(2) {
   transform: rotate(45deg);
 }
-#main.open .menu_button span:nth-child(3) {
+.menu.open .menu_button span:nth-child(3) {
   transform: rotate(-45deg);
 }
-#main.open .menu_button span:nth-child(4) {
+.menu.open .menu_button span:nth-child(4) {
   top: 18px;
   width: 0%;
   left: 50%;

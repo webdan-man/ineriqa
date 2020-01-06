@@ -75,12 +75,16 @@ const interaqaJS = function () {
 
 
         if (document.documentElement.clientWidth > 1100) {
-            const closeRect = popapProjectBox.querySelector('.wrap').getBoundingClientRect();
             document.querySelectorAll('.close').forEach(element => {
-                element.style.left = closeRect.y + 175 + 'px';
+                element.style.left = window.innerWidth - 152 + 'px';
             })
-        }
-        if (document.documentElement.clientWidth > 480) {
+            window.onresize = function() {
+                document.querySelectorAll('.close').forEach(element => {
+                    element.style.left = window.innerWidth - 152 + 'px';
+                })
+                menuFixed()
+            };
+        } else if (document.documentElement.clientWidth <= 1100 && document.documentElement.clientWidth > 480) {
             window.onresize = function() {
                 menuFixed()
             };
@@ -90,7 +94,7 @@ const interaqaJS = function () {
 
     const menuFixed = function () {
         const rect = document.querySelector('nav .header').getBoundingClientRect();
-        menu.style.left = rect.width - rect.y + 'px';
+        menu.style.left = rect.width + rect.x - menu.clientWidth + 'px';
     }
 
     const closeButtonAction = function () {
@@ -102,6 +106,7 @@ const interaqaJS = function () {
     const cloceButtonClick = function () {
         document.body.classList.remove('popap_open');
         if (!!this.closest('.popap')) this.closest('.popap').classList.remove('open');
+        menu.classList.remove('open');
     }
 
     const popapScrollButtonAction = function () {      
@@ -119,7 +124,8 @@ const interaqaJS = function () {
     const handleButtonClick = function (e) {
         e.preventDefault();
         $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top }, 1000)
-        if(this.closest('body').querySelector('#main')) this.closest('body').querySelector('#main').classList.remove('open');
+        if(document.querySelector('#main')) document.querySelector('#main').classList.remove('open');
+        menu.classList.remove('open');
      }
 
     const handlePopapButtonClick = function (e) {
@@ -130,12 +136,14 @@ const interaqaJS = function () {
         }, 500)
         if(document.body.classList) document.body.classList.remove('popap_open');
         if(this.closest('.popap')) this.closest('.popap').classList.remove('open');
-        if(this.closest('body').querySelector('#main')) this.closest('body').querySelector('#main').classList.remove('open');
+        if(document.querySelector('#main')) document.querySelector('#main').classList.remove('open');
+        menu.classList.remove('open');
     }
 
     const openMenuToggle = function () {
         menu.addEventListener('click', function(e) {        
-            e.target.closest('body').querySelector('#main').classList.toggle('open');
+            document.querySelector('#main').classList.toggle('open');
+            menu.classList.toggle('open');
         })
     }
     
@@ -154,8 +162,18 @@ const interaqaJS = function () {
                     addNavInfo();
                     removeElement();
                     menu.style.left = '';
-                    document.addEventListener('touchmove', function (event) {
-                        if (event.scale !== 1) { event.preventDefault(); }
+                    document.documentElement.addEventListener('touchstart', function (event) {
+                        if (event.touches.length > 1) {
+                          event.preventDefault();
+                        }
+                    }, false);
+                    let lastTouchEnd = 0;
+                    document.documentElement.addEventListener('touchend', function (event) {
+                        var now = (new Date()).getTime();
+                        if (now - lastTouchEnd <= 300) {
+                            event.preventDefault();
+                        }
+                        lastTouchEnd = now;
                     }, false);
                     console.log('is mobile :)');
                 }
@@ -266,6 +284,8 @@ const interaqaJS = function () {
 
             document.body.classList.add('popap_open');
             popapSostav.classList.add('open');
+            document.querySelector('#popap').style.height = popapSostav.querySelector('.box').scrollHeight + 'px';
+
         })
     }
 
@@ -273,7 +293,7 @@ const interaqaJS = function () {
         button_projects.forEach((button_project, index) => {
             button_project.addEventListener('click', function (e) {
 
-                this.closest('body').querySelector('#main').classList = '';
+                document.querySelector('#main').classList = '';
 
                 main.style.transformOrigin = "50% " + e.pageY + 'px';
 
@@ -289,7 +309,7 @@ const interaqaJS = function () {
 
                 popapProject.classList.add('open');
                 popapProject.classList.add('project' + (index+1));
-                
+                document.querySelector('#popap').style.height = popapProject.querySelector('.box').scrollHeight + 'px';
                 document.querySelector('#project').querySelector('.box').scrollTo(0, 0);
             })
         })
@@ -322,6 +342,9 @@ const interaqaJS = function () {
 };
 
 if (window.location.pathname !== '/thank.html') {
+    $(function() {
+        $('img').lazy();
+    });
     $(document).ready(function(){
 
         $('input[name="phone"]').mask('+7 (999) 999-99-99');
